@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanFlo: How High Schoolers Are Transforming Rivers Through Bubbles - ConnectED</title>
+    <meta name="description" content="Indonesian high school students develop revolutionary air bubble nets to clean polluted rivers while protecting marine life. A story of youth innovation and environmental impact.">
+    <meta name="keywords" content="CleanFlo, river pollution, Indonesian environment, youth innovation, air bubble technology, waste management">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #fafafa;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            color: white !important;
+            padding: 0.7rem 1.5rem !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #00b4db, #0083b0, #667eea);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0, 180, 219, 0.8) 0%, 
+                rgba(0, 131, 176, 0.6) 50%, 
+                rgba(102, 126, 234, 0.8) 100%);
+        }
+
+        .article-image::after {
+            content: '🌊';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.7;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #00b4db, #667eea);
+            border-radius: 2px;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .article-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .article-content em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        .stats-box {
+            background: rgba(0, 180, 219, 0.05);
+            border-left: 4px solid #00b4db;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .stats-box h3 {
+            color: #00b4db;
+            margin-bottom: 1rem;
+        }
+
+        .stats-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stats-box li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 180, 219, 0.1);
+        }
+
+        .stats-box li:last-child {
+            border-bottom: none;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #00b4db;
+            font-family: serif;
+        }
+
+        .innovation-highlight {
+            background: linear-gradient(135deg, rgba(0, 180, 219, 0.1), rgba(102, 126, 234, 0.1));
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(0, 180, 219, 0.2);
+        }
+
+        .innovation-highlight h3 {
+            color: #00b4db;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Action Cards */
+        .action-cards {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .action-cards h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .action-tier {
+            margin-bottom: 2.5rem;
+        }
+
+        .action-tier h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-tier.immediate h3 { color: #27ae60; }
+        .action-tier.engaged h3 { color: #f39c12; }
+        .action-tier.committed h3 { color: #e74c3c; }
+
+        .action-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-item {
+            background: rgba(0, 180, 219, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #00b4db;
+        }
+
+        .action-item strong {
+            color: #00b4db;
+        }
+
+        /* Related Content */
+        .related-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .related-content h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-link {
+            text-decoration: none;
+            color: #00b4db;
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(0, 180, 219, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .related-link:hover {
+            background: rgba(0, 180, 219, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">ConnectED</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/stories">Stories</a></li>
+                <li><a href="/voices">Voices</a></li>
+                <li><a href="/perspectives">Perspectives</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/volunteer">Volunteer</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/share" class="nav-cta">Share Your Story</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="meta-item">Environmental Innovation</span>
+                <span class="meta-item">📍 Jakarta & Indramayu, Indonesia</span>
+                <span class="meta-item">🕒 5 min read</span>
+                <span class="meta-item">📅 July 20, 2025</span>
+            </div>
+            <h1 class="article-title">CleanFlo: How High Schoolers Are Transforming Rivers Through Revolutionary Bubble Technology</h1>
+        </header>
+
+        <!-- Article Image -->
+        <div class="article-image">
+            <div class="image-caption">Indonesian rivers facing pollution challenges that young innovators are determined to solve</div>
+        </div>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <h2>🌊 The Silent Crisis Beneath Indonesia's Waters</h2>
+            <p>Across Indonesia's vast archipelago, a hidden environmental crisis flows through the arteries of the nation. Polluted, trash-filled rivers and irrigation systems have become a persistent challenge, stemming from inadequate waste management and drainage infrastructure. These waterways, once the lifeblood of communities, now carry the burden of urban waste and industrial runoff.</p>
+
+            <p>For decades, communities have relied on traditional trash nets to combat river pollution. While these solutions capture visible waste, they come with devastating trade-offs: <strong>marine life becomes trapped and killed</strong>, and the invisible threat of pollution continues unchecked. High Biochemical Oxygen Demand (BOD) levels persist, depleting oxygen and triggering eutrophication that devastates entire aquatic ecosystems.</p>
+
+            <p>But a group of determined high school students refused to accept this status quo. Their innovative solution would challenge everything we thought we knew about river cleaning technology.</p>
+
+            <h2>💡 When Innovation Meets Inspiration</h2>
+            <p>The story of <strong>CleanFlo</strong> began in the hallways and classrooms where SDG 14 (Life Below Water) wasn't just a poster on the wall—it was a call to action. After years of participating in river cleanups, these students witnessed firsthand the limitations of existing solutions and the urgent need for innovation.</p>
+
+            <div class="innovation-highlight">
+                <h3>🔬 The Breakthrough Innovation</h3>
+                <p>Instead of traditional rope nets, CleanFlo's revolutionary system uses <strong>air bubbles</strong> to create an invisible barrier. This groundbreaking approach:</p>
+                <ul>
+                    <li><strong>Blocks trash passage</strong> through controlled pressure differentials</li>
+                    <li><strong>Allows marine life to pass safely</strong> without physical barriers</li>
+                    <li><strong>Releases oxygen into the water</strong>, reducing BOD levels naturally</li>
+                    <li><strong>Prevents eutrophication</strong> while cleaning waterways</li>
+                </ul>
+            </div>
+
+            <p>The elegance of the solution lies in its simplicity: what if the barrier itself could heal the water while cleaning it?</p>
+
+            <h2>🚀 From Prototype to Proven Impact</h2>
+            <p>The true test came in <strong>Haurgeulis, Indramayu</strong>—a region where irrigation channels aren't just water sources, they're lifelines for entire communities whose livelihoods depend on agriculture and fishing.</p>
+
+            <div class="stats-box">
+                <h3>🎯 Measurable Results in Just One Week:</h3>
+                <ul>
+                    <li><strong>90 kilograms of trash</strong> successfully collected and removed</li>
+                    <li><strong>Zero marine life casualties</strong> reported during operation</li>
+                    <li><strong>Improved water oxygen levels</strong> measured downstream</li>
+                    <li><strong>Community approval</strong> for continued deployment</li>
+                </ul>
+            </div>
+
+            <p>These weren't just numbers—they represented cleaner water for families, healthier ecosystems for fish, and proof that youth innovation could create real environmental change.</p>
+
+            <h2>❤️ A Personal Mission Born from Experience</h2>
+            <p>When asked about their motivation, the CleanFlo team's response revealed the deeply personal nature of their mission. Environmental activism often begins not with abstract statistics, but with lived experience.</p>
+
+            <div class="quote-box">
+                [We] started because not everyone's as privileged to have counter measures to these floods. A lot of people depend on the waters of their areas.
+            </div>
+
+            <p>One founder described the frequent flooding directly in front of their home and community—a stark reminder that environmental challenges don't affect everyone equally. The most vulnerable communities often bear the greatest burden of pollution and its consequences.</p>
+
+            <p>This perspective shaped their approach: <strong>technology for social good</strong> that prioritizes communities who depend most on clean waterways for their survival and prosperity.</p>
+
+            <h2>🔮 Scaling Innovation for Systemic Change</h2>
+            <p>Success in Indramayu was just the beginning. The CleanFlo team is now planning to transform their prototype into a full-scale initiative through their school's environmental club, creating a model for youth-led environmental action that other schools can replicate.</p>
+
+            <h3>📈 Expansion Strategy:</h3>
+            <ul>
+                <li><strong>Jakarta's Major Rivers</strong>: Targeting the Ciluwang and Citarum rivers for large-scale deployment</li>
+                <li><strong>School Network Development</strong>: Training other schools to implement similar projects</li>
+                <li><strong>Community Partnership Program</strong>: Working with local governments and NGOs for wider reach</li>
+                <li><strong>Technology Refinement</strong>: Continuous improvement based on field results and community feedback</li>
+            </ul>
+
+            <p>Their vision extends beyond cleaning individual rivers—they're building a <strong>sustainable model for environmental stewardship</strong> that combines cutting-edge technology with grassroots community engagement.</p>
+
+            <h2>🌍 The Ripple Effect of Youth Innovation</h2>
+            <p>CleanFlo represents more than a technological breakthrough; it's a testament to what's possible when young people apply scientific thinking to social challenges. Their work demonstrates several crucial principles:</p>
+
+            <ul>
+                <li><strong>Innovation with empathy</strong>: Technology that considers both environmental and social impact</li>
+                <li><strong>Community-centered solutions</strong>: Addressing real needs of people who depend on these waterways</li>
+                <li><strong>Systemic thinking</strong>: Tackling root causes rather than just symptoms</li>
+                <li><strong>Scalable approaches</strong>: Building solutions that can grow and adapt</li>
+            </ul>
+
+            <p>The students behind CleanFlo remind us that environmental challenges require both <strong>technological innovation and social consciousness</strong>. Their work proves that the next generation isn't just inheriting environmental problems—they're actively solving them.</p>
+
+            <h2>🎯 Your Role in the Solution</h2>
+            <p>While CleanFlo's bubble technology tackles river pollution at scale, individual actions create the foundation for systemic change. Every piece of properly disposed waste is one less item threatening our waterways and the communities that depend on them.</p>
+
+            <p>The students' work also highlights a broader truth: <strong>environmental solutions emerge when we combine innovation with genuine care for community wellbeing</strong>. Their success invites us all to think creatively about the challenges we see in our own communities.</p>
+        </article>
+
+        <!-- Action Cards -->
+        <div class="action-cards">
+            <h2>🎯 Join the Clean Water Movement</h2>
+            
+            <div class="action-tier immediate">
+                <h3>🟢 Immediate Actions (5 minutes)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Share CleanFlo's story</strong> on social media to raise awareness about river pollution solutions
+                    </div>
+                    <div class="action-item">
+                        <strong>Assess your waste habits</strong> and commit to proper disposal in your daily life
+                    </div>
+                    <div class="action-item">
+                        <strong>Learn about local water quality</strong> and pollution challenges in your area
+                    </div>
+                    <div class="action-item">
+                        <strong>Follow SDG 14 initiatives</strong> and support Life Below Water conservation efforts
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier engaged">
+                <h3>🟡 Engaged Actions (30 minutes - 2 hours)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Organize a river cleanup</strong> in your community or join existing environmental groups
+                    </div>
+                    <div class="action-item">
+                        <strong>Research bubble aeration technology</strong> and its applications in water treatment
+                    </div>
+                    <div class="action-item">
+                        <strong>Contact CleanFlo team</strong> to learn about their technology and expansion plans
+                    </div>
+                    <div class="action-item">
+                        <strong>Start an environmental club</strong> at your school focused on water conservation
+                    </div>
+                    <div class="action-item">
+                        <strong>Document local water pollution</strong> and share findings with environmental organizations
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier committed">
+                <h3>🔴 Committed Actions (Ongoing involvement)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Develop similar technology</strong> for your local water pollution challenges
+                    </div>
+                    <div class="action-item">
+                        <strong>Partner with CleanFlo</strong> to bring their technology to new regions
+                    </div>
+                    <div class="action-item">
+                        <strong>Advocate for water quality policies</strong> in your local government
+                    </div>
+                    <div class="action-item">
+                        <strong>Support water technology research</strong> through funding or volunteer expertise
+                    </div>
+                    <div class="action-item">
+                        <strong>Mentor young environmental innovators</strong> in your community
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="related-content">
+            <h2>📚 Related Stories</h2>
+            <div class="related-links">
+                <a href="/stories/youth-environmental-leadership">Youth Environmental Leadership in Indonesia</a>
+                <a href="/stories/innovative-water-solutions">Innovative Solutions for Water Challenges</a>
+                <a href="/stories/community-environmental-action">Community-Driven Environmental Action</a>
+                <a href="/stories/project-papagarang-sanitation">Project Papagarang: Fighting Stunting Through Sanitation</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ConnectED</h3>
+                <p>Founded in Jakarta in 2025, we capture the quiet, everyday stories that bridge divides and inspire positive change across Indonesia. Our mission is to humanize the world through authentic storytelling.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Content</h4>
+                <ul class="footer-links">
+                    <li><a href="/stories">Stories</a></li>
+                    <li><a href="/voices">Voices Podcast</a></li>
+                    <li><a href="/perspectives">Perspectives</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul class="footer-links">
+                    <li><a href="/volunteer">Volunteer</a></li>
+                    <li><a href="/share">Share Your Story</a></li>
+                    <li><a href="/partners">Partners</a></li>
+                    <li><a href="/events">Events</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul class="footer-links">
+                    <li><a href="/about">Our Mission</a></li>
+                    <li><a href="/team">Team</a></li>
+                    <li><a href="/impact">Impact Report</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 ConnectED Foundation. All rights reserved. Made with ❤️ for Indonesian communities.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Reading progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            let progressBar = document.querySelector('.reading-progress');
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.className = 'reading-progress';
+                progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 3px;
+                    background: linear-gradient(135deg, #00b4db, #667eea);
+                    z-index: 9999;
+                    transition: width 0.3s ease;
+                `;
+                document.body.appendChild(progressBar);
+            }
+            
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Door: When AI Meets Compassion for Migrant Workers - ConnectED</title>
+    <meta name="description" content="How a Singapore student created an AI chatbot to help migrant workers access affordable resources. A story of empathy, technology, and social impact.">
+    <meta name="keywords" content="Open Door, migrant workers, Singapore, AI chatbot, affordable resources, youth innovation, social technology">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #fafafa;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            color: white !important;
+            padding: 0.7rem 1.5rem !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(241, 90, 34, 0.1);
+            color: #f15a22;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f15a22, #f39c12, #e67e22);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(241, 90, 34, 0.8) 0%, 
+                rgba(243, 156, 18, 0.6) 50%, 
+                rgba(230, 126, 34, 0.8) 100%);
+        }
+
+        .article-image::after {
+            content: '🤝';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.7;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #f15a22, #e67e22);
+            border-radius: 2px;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .article-content strong {
+            color: #f15a22;
+            font-weight: 700;
+        }
+
+        .article-content em {
+            color: #d35400;
+            font-style: italic;
+        }
+
+        .stats-box {
+            background: rgba(241, 90, 34, 0.05);
+            border-left: 4px solid #f15a22;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .stats-box h3 {
+            color: #f15a22;
+            margin-bottom: 1rem;
+        }
+
+        .stats-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stats-box li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(241, 90, 34, 0.1);
+        }
+
+        .stats-box li:last-child {
+            border-bottom: none;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #f15a22;
+            font-family: serif;
+        }
+
+        .innovation-highlight {
+            background: linear-gradient(135deg, rgba(241, 90, 34, 0.1), rgba(230, 126, 34, 0.1));
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(241, 90, 34, 0.2);
+        }
+
+        .innovation-highlight h3 {
+            color: #f15a22;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .challenge-box {
+            background: rgba(52, 73, 94, 0.05);
+            border-left: 4px solid #34495e;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .challenge-box h3 {
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+
+        .tech-feature {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 3px solid #f15a22;
+        }
+
+        .tech-feature h4 {
+            color: #f15a22;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Action Cards */
+        .action-cards {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .action-cards h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .action-tier {
+            margin-bottom: 2.5rem;
+        }
+
+        .action-tier h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-tier.immediate h3 { color: #27ae60; }
+        .action-tier.engaged h3 { color: #f39c12; }
+        .action-tier.committed h3 { color: #e74c3c; }
+
+        .action-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-item {
+            background: rgba(241, 90, 34, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #f15a22;
+        }
+
+        .action-item strong {
+            color: #f15a22;
+        }
+
+        /* Related Content */
+        .related-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .related-content h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-link {
+            text-decoration: none;
+            color: #f15a22;
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(241, 90, 34, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .related-link:hover {
+            background: rgba(241, 90, 34, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">ConnectED</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/stories">Stories</a></li>
+                <li><a href="/voices">Voices</a></li>
+                <li><a href="/perspectives">Perspectives</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/volunteer">Volunteer</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/share" class="nav-cta">Share Your Story</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="meta-item">Social Technology</span>
+                <span class="meta-item">📍 Singapore</span>
+                <span class="meta-item">🕒 6 min read</span>
+                <span class="meta-item">📅 October 15, 2025</span>
+            </div>
+            <h1 class="article-title">Open Door: When AI Meets Compassion for Migrant Workers</h1>
+            <p class="article-subtitle">How a student's daily observations transformed into an AI chatbot helping migrant workers access affordable resources in Singapore</p>
+        </header>
+
+        <!-- Article Image -->
+        <div class="article-image">
+            <div class="image-caption">Using technology to bridge the gap between those who build our cities and the resources they need</div>
+        </div>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <h2>👷 The People Who Build Our Cities</h2>
+            <p>Every day, millions of people pass by construction sites, cleaning crews, and delivery workers without a second thought. These migrant workers are the invisible backbone of modern Singapore-constructing skyscrapers, maintaining infrastructure, keeping businesses running. Yet for all their essential contributions, they remain largely unseen by the very society they help build.</p>
+
+            <p>For <strong>Tvisha Jhamb</strong>, a student in Singapore, these workers were impossible to ignore. Walking past her school every day, she witnessed their reality firsthand: workers sweating under the harsh sun, carrying heavy loads, pushing through physically demanding days. While others saw just another part of the urban landscape, Tvisha saw human beings struggling with challenges that extended far beyond their workday.</p>
+
+            <p>What she discovered through research would change her perspective forever-and ultimately lead to the creation of <strong>Open Door</strong>, an AI-powered solution addressing one of the most overlooked obstacles facing migrant workers in Singapore.</p>
+
+            <h2>🔍 The Hidden Struggle: Access Over Affordability</h2>
+            <p>When Tvisha began investigating the challenges migrant workers face, she expected to find issues related to wages, working conditions, or housing-the problems typically highlighted in public discussions. What emerged instead was something more insidious precisely because it was so ordinary: <strong>the difficulty of accessing affordable everyday resources</strong>.</p>
+
+            <div class="challenge-box">
+                <h3>🚧 The Resource Access Crisis:</h3>
+                <ul>
+                    <li><strong>Information barriers</strong>: Workers often don't know where affordable resources exist</li>
+                    <li><strong>Language obstacles</strong>: Navigation and communication in unfamiliar languages</li>
+                    <li><strong>Geographic isolation</strong>: Workers often housed far from affordable options</li>
+                    <li><strong>Time constraints</strong>: Long work hours leave minimal time to search for resources</li>
+                    <li><strong>Network limitations</strong>: Lack of local connections who know the area</li>
+                    <li><strong>Exploitative pricing</strong>: Convenience stores near worksites charge premium prices</li>
+                </ul>
+            </div>
+
+            <p>Imagine finishing an exhausting 12-hour shift and needing to find affordable groceries, medical care, or basic supplies. You don't know the area. You have limited language skills. You're exhausted. Every minute spent searching is a minute stolen from the few hours of rest you have before starting again tomorrow. This wasn't just an inconvenience-it was a daily crisis that compounded the already difficult reality of migrant work.</p>
+
+            <div class="quote-box">
+                I think seeing their struggles and looking at so many migrant workers near my school sweating and doing so much work-I wanted to do something for them. After researching a lot, I found that one of the most significant concerns was finding accessible resources, and hence I tried solving for that problem.
+            </div>
+
+            <h2>🤖 Technology as Bridge, Not Barrier</h2>
+            <p>Tvisha's solution emerged from a crucial insight: while migrant workers face numerous challenges, most carry smartphones-the one tool that could potentially bridge the information gap. What they needed wasn't another complex system to navigate, but a simple, accessible way to find affordable resources nearby.</p>
+
+            <p>Enter <strong>Open Door</strong>: an AI-powered chatbot designed specifically for migrant workers in Singapore. Rather than creating another app that requires downloading, registration, and learning a new interface, Tvisha built a conversational assistant that works through familiar messaging platforms.</p>
+
+            <div class="innovation-highlight">
+                <h3>🌟 How Open Door Works:</h3>
+                <p>The chatbot uses artificial intelligence to understand worker queries and provide personalized recommendations for affordable resources based on their location and needs. It's designed to be:</p>
+                <ul>
+                    <li><strong>Conversational</strong>: Natural language interaction, no technical knowledge required</li>
+                    <li><strong>Multilingual</strong>: Support for languages commonly spoken by migrant workers</li>
+                    <li><strong>Location-aware</strong>: Provides nearby options based on user's current location</li>
+                    <li><strong>Comprehensive</strong>: Covers groceries, healthcare, remittance services, and more</li>
+                    <li><strong>Constantly updated</strong>: Database regularly refreshed with new affordable options</li>
+                </ul>
+            </div>
+
+            <h3>The Power of Simple Questions, Powerful Answers</h3>
+            <p>A worker can simply ask: "Where can I find cheap groceries near Jurong?" and receive immediate, relevant recommendations. Or: "I need to send money home-what's the cheapest option?" The AI understands context, remembers previous conversations, and learns to provide increasingly relevant suggestions.</p>
+
+            <div class="tech-feature">
+                <h4>💡 Example Interaction:</h4>
+                <p><strong>Worker:</strong> "I'm near Kallang MRT. Where can I buy affordable vegetables?"</p>
+                <p><strong>Open Door:</strong> "There are 3 affordable options within 10 minutes: 1) Tekka Market (7 min walk) - cheapest fresh vegetables, open till 9pm. 2) FairPrice Finest (5 min walk) - budget section available. 3) Mustafa Centre (12 min walk) - bulk buying options, open 24/7."</p>
+            </div>
+
+            <h2>❤️ Building with Empathy, Not Assumptions</h2>
+            <p>What distinguishes Open Door from typical technology solutions is its foundation in genuine empathy rather than assumptions about what workers need. Tvisha didn't build what she thought would be useful-she researched, observed, and designed around actual challenges migrant workers expressed.</p>
+
+            <p>This empathy-driven approach manifests in subtle but crucial design choices:</p>
+
+            <ul>
+                <li><strong>Simplicity first</strong>: No unnecessary features that complicate the core mission</li>
+                <li><strong>Respect for dignity</strong>: Language that treats workers as valued community members, not charity cases</li>
+                <li><strong>Privacy-conscious</strong>: Minimal data collection, no intrusive tracking</li>
+                <li><strong>Offline capability</strong>: Key information cached for areas with poor connectivity</li>
+                <li><strong>Cultural sensitivity</strong>: Understanding of dietary restrictions, remittance patterns, community preferences</li>
+            </ul>
+
+            <div class="quote-box">
+                I feel that they already have so much to do and so much workload that making their life easier by providing them resources can ease off some of their stress and workload.
+            </div>
+
+            <h2>🌱 The Ripple Effect of Accessible Resources</h2>
+            <p>When Tvisha describes her impact goal-"each migrant worker's life is made accessible by providing resources nearby that are affordable"-she's articulating something profound about dignity and agency. Open Door isn't just about saving a few dollars on groceries. It's about:</p>
+
+            <h3>Time Reclaimed</h3>
+            <p>Every hour not spent wandering unfamiliar neighborhoods searching for affordable options is an hour that can be spent resting, connecting with family back home, or pursuing personal interests. For workers with grueling schedules, time is the most precious resource.</p>
+
+            <h3>Stress Reduced</h3>
+            <p>Financial stress compounds the physical exhaustion of migrant work. Knowing where to find affordable essentials removes one layer of daily anxiety, creating mental space for workers to focus on their wellbeing and goals.</p>
+
+            <h3>Agency Restored</h3>
+            <p>Perhaps most importantly, Open Door provides <strong>choice</strong>. Instead of being trapped by circumstance-forced to use the expensive convenience store near the worksite because they don't know alternatives exist-workers gain the power to make informed decisions about their own resources.</p>
+
+            <h2>💭 The Philosophy of Small Ideas, Big Changes</h2>
+            <p>When asked what advice she'd offer others wanting to create change, Tvisha's response reveals a maturity beyond her years:</p>
+
+            <div class="quote-box">
+                I would advise people to do anything they can for the betterment of society, and changes don't always come from grand inventions but from small ideas. Even like this simple chatbot I have created can give the migrant workers a choice, a way forward, and an area of upbringing.
+            </div>
+
+            <p>This philosophy-that meaningful change comes from simple ideas executed with genuine care-challenges the prevalent narrative that social impact requires massive resources or revolutionary innovations. Open Door demonstrates that technology's highest purpose isn't complexity or novelty, but <strong>serving fundamental human needs with elegance and empathy</strong>.</p>
+
+            <h3>The Danger of Waiting for "Big Enough"</h3>
+            <p>Too often, people see problems and think, "I can't solve the whole thing, so why bother?" Tvisha's work proves this mindset wrong. She didn't wait until she could transform the entire migrant worker experience. She identified one specific, solvable problem-access to affordable resources-and built a practical solution.</p>
+
+            <p>The result? A tool that makes immediate, tangible differences in daily lives while demonstrating what's possible when we stop waiting for permission to help.</p>
+
+            <h2>🔮 Growing Impact, Sustainable Vision</h2>
+            <p>Open Door launched in 2025, and Tvisha is already thinking strategically about expanding impact while maintaining quality. The roadmap reflects both ambition and pragmatism:</p>
+
+            <h3>Near-Term Development:</h3>
+            <ul>
+                <li><strong>Community partnerships</strong>: Collaborating with organizations that work directly with migrant workers</li>
+                <li><strong>Database expansion</strong>: Adding more categories (education, legal services, recreation)</li>
+                <li><strong>User feedback integration</strong>: Continuously improving based on worker input</li>
+                <li><strong>Language support expansion</strong>: Adding more languages spoken by migrant communities</li>
+                <li><strong>Awareness campaigns</strong>: Ensuring workers know the tool exists</li>
+            </ul>
+
+            <h3>Long-Term Vision:</h3>
+            <ul>
+                <li><strong>Community-driven updates</strong>: Workers contributing recommendations and reviews</li>
+                <li><strong>Skills marketplace</strong>: Connecting workers with training opportunities and side income</li>
+                <li><strong>Social connection features</strong>: Helping workers find community and support networks</li>
+                <li><strong>Advocacy insights</strong>: Using aggregated data (privacy-protected) to inform policy improvements</li>
+            </ul>
+
+            <h2>🌍 Redefining Who Belongs in Our Communities</h2>
+            <p>Open Door challenges us to reconsider who we see as part of our communities. Migrant workers aren't temporary visitors or invisible labor-they're community members with the same fundamental needs and deserve the same access to resources that we take for granted.</p>
+
+            <p>By creating a tool that treats workers with dignity and serves their actual needs, Tvisha demonstrates what inclusive technology looks like. It's not about building platforms that extract data or monetize vulnerable populations. It's about <strong>using technical skills to expand access, restore agency, and acknowledge shared humanity</strong>.</p>
+
+            <h3>The Test of Our Values</h3>
+            <p>How we treat those who build our cities, clean our streets, and maintain our infrastructure reveals the truth about our community values. Do we see them? Do we care about their struggles? Are we willing to use our privileges-education, technology access, local knowledge-to help?</p>
+
+            <p>Open Door answers these questions with a resounding yes, proving that one student with empathy and technical skills can create meaningful change.</p>
+
+            <h2>🎯 Try Open Door</h2>
+            <p>Open Door is live and helping migrant workers across Singapore find affordable resources. The chatbot is accessible at <strong><a href="https://tvishajhamb.github.io/MigHelpBot/" target="_blank" style="color: #f15a22; text-decoration: underline;">tvishajhamb.github.io/MigHelpBot/</a></strong>.</p>
+
+            <p>Whether you're a migrant worker searching for affordable options, someone who wants to contribute resource recommendations, or an organization that serves these communities, Open Door offers a practical way to make Singapore more accessible and equitable for everyone who helps build it.</p>
+        </article>
+
+        <!-- Action Cards -->
+        <div class="action-cards">
+            <h2>🎯 Support Migrant Worker Access</h2>
+            
+            <div class="action-tier immediate">
+                <h3>🟢 Immediate Actions (5 minutes)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Try Open Door yourself</strong> to understand how it helps migrant workers
+                    </div>
+                    <div class="action-item">
+                        <strong>Share Open Door</strong> with migrant workers you encounter or know
+                    </div>
+                    <div class="action-item">
+                        <strong>Post about Open Door</strong> in community groups and social media
+                    </div>
+                    <div class="action-item">
+                        <strong>Add a resource</strong> you know of that offers affordable options
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier engaged">
+                <h3>🟡 Engaged Actions (30 minutes - 2 hours)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Create flyers or materials</strong> in multiple languages about Open Door
+                    </div>
+                    <div class="action-item">
+                        <strong>Partner with your workplace</strong> to share Open Door with migrant staff
+                    </div>
+                    <div class="action-item">
+                        <strong>Connect Tvisha</strong> with organizations serving migrant communities
+                    </div>
+                    <div class="action-item">
+                        <strong>Volunteer to help</strong> expand the resource database with local knowledge
+                    </div>
+                    <div class="action-item">
+                        <strong>Organize a workshop</strong> teaching migrant workers how to use Open Door
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier committed">
+                <h3>🔴 Committed Actions (Ongoing involvement)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Build similar tools</strong> for migrant workers in other cities or countries
+                    </div>
+                    <div class="action-item">
+                        <strong>Advocate for policies</strong> that improve migrant worker access to resources
+                    </div>
+                    <div class="action-item">
+                        <strong>Create partnerships</strong> between businesses and Open Door for verified listings
+                    </div>
+                    <div class="action-item">
+                        <strong>Fund expansion</strong> of Open Door's features and language support
+                    </div>
+                    <div class="action-item">
+                        <strong>Mentor young technologists</strong> interested in building socially-conscious tools
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="related-content">
+            <h2>📚 Related Stories</h2>
+            <div class="related-links">
+                <a href="/stories/technology-for-social-good">Technology Serving Community Needs</a>
+                <a href="/stories/empathy-driven-innovation">Empathy-Driven Innovation</a>
+                <a href="/stories/youth-building-solutions">Young People Building Real Solutions</a>
+                <a href="/stories/migrant-worker-support">Supporting Migrant Worker Communities</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ConnectED</h3>
+                <p>Founded in Jakarta in 2025, we capture the quiet, everyday stories that bridge divides and inspire positive change across Indonesia. Our mission is to humanize the world through authentic storytelling.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Content</h4>
+                <ul class="footer-links">
+                    <li><a href="/stories">Stories</a></li>
+                    <li><a href="/voices">Voices Podcast</a></li>
+                    <li><a href="/perspectives">Perspectives</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul class="footer-links">
+                    <li><a href="/volunteer">Volunteer</a></li>
+                    <li><a href="/share">Share Your Story</a></li>
+                    <li><a href="/partners">Partners</a></li>
+                    <li><a href="/events">Events</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul class="footer-links">
+                    <li><a href="/about">Our Mission</a></li>
+                    <li><a href="/team">Team</a></li>
+                    <li><a href="/impact">Impact Report</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 ConnectED Foundation. All rights reserved. Made with ❤️ for Indonesian communities.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Reading progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            let progressBar = document.querySelector('.reading-progress');
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.className = 'reading-progress';
+                progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 3px;
+                    background: linear-gradient(135deg, #f15a22, #e67e22);
+                    z-index: 9999;
+                    transition: width 0.3s ease;
+                `;
+                document.body.appendChild(progressBar);
+            }
+            
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

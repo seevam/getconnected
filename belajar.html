@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Bersama: When Students Teach Students to Break the Cycle - ConnectED</title>
+    <meta name="description" content="How Indonesian high school students created a tutoring initiative helping 60+ youth pass national equivalency exams and access economic opportunity. A story of education equity and peer mentorship.">
+    <meta name="keywords" content="Belajar Bersama, PKBM, education access, Indonesia, peer tutoring, equivalency exams, youth mentorship">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #fafafa;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            color: white !important;
+            padding: 0.7rem 1.5rem !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71, #16a085);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(39, 174, 96, 0.8) 0%, 
+                rgba(46, 204, 113, 0.6) 50%, 
+                rgba(22, 160, 133, 0.8) 100%);
+        }
+
+        .article-image::after {
+            content: '📚';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.7;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            border-radius: 2px;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .article-content strong {
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        .article-content em {
+            color: #16a085;
+            font-style: italic;
+        }
+
+        .stats-box {
+            background: rgba(39, 174, 96, 0.05);
+            border-left: 4px solid #27ae60;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .stats-box h3 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+
+        .stats-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stats-box li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(39, 174, 96, 0.1);
+        }
+
+        .stats-box li:last-child {
+            border-bottom: none;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #27ae60;
+            font-family: serif;
+        }
+
+        .innovation-highlight {
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(46, 204, 113, 0.1));
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(39, 174, 96, 0.2);
+        }
+
+        .innovation-highlight h3 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .challenge-box {
+            background: rgba(231, 76, 60, 0.05);
+            border-left: 4px solid #e74c3c;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .challenge-box h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .pathway-box {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .pathway-box h3 {
+            color: #27ae60;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .pathway-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .pathway-step {
+            background: rgba(39, 174, 96, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid rgba(39, 174, 96, 0.2);
+        }
+
+        .pathway-step-number {
+            background: #27ae60;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .pathway-step h4 {
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .pathway-step p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Action Cards */
+        .action-cards {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .action-cards h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .action-tier {
+            margin-bottom: 2.5rem;
+        }
+
+        .action-tier h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-tier.immediate h3 { color: #27ae60; }
+        .action-tier.engaged h3 { color: #f39c12; }
+        .action-tier.committed h3 { color: #e74c3c; }
+
+        .action-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-item {
+            background: rgba(39, 174, 96, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .action-item strong {
+            color: #27ae60;
+        }
+
+        /* Related Content */
+        .related-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .related-content h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-link {
+            text-decoration: none;
+            color: #27ae60;
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(39, 174, 96, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .related-link:hover {
+            background: rgba(39, 174, 96, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .pathway-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">ConnectED</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/stories">Stories</a></li>
+                <li><a href="/voices">Voices</a></li>
+                <li><a href="/perspectives">Perspectives</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/volunteer">Volunteer</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/share" class="nav-cta">Share Your Story</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="meta-item">Education Access</span>
+                <span class="meta-item">📍 Indonesia</span>
+                <span class="meta-item">🕒 6 min read</span>
+                <span class="meta-item">📅 Founded 2021</span>
+            </div>
+            <h1 class="article-title">Belajar Bersama: When Students Teach Students to Break the Cycle</h1>
+            <p class="article-subtitle">How Indonesian high school students created a tutoring movement helping 60+ youth pass national equivalency exams and unlock economic opportunity</p>
+        </header>
+
+        <!-- Article Image -->
+        <div class="article-image">
+            <div class="image-caption">Education as a pathway to opportunity, delivered through peer mentorship</div>
+        </div>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <h2>📖 The Promise and the Gap</h2>
+            <p>Education is enshrined as a fundamental right in Indonesia's constitution. It's celebrated as the pathway to success, the great equalizer, the foundation of national progress. Yet behind these lofty ideals lies a sobering reality: millions of Indonesian children and teenagers cannot access formal education, creating a crisis that threatens not just individual futures but the nation's development itself.</p>
+
+            <p>For young people who must work to support their families, who live in areas without schools, or who face other circumstances that force them out of the formal education system, this isn't an abstract problem-it's the difference between opportunity and a lifetime of limited options. Without diplomas, doors close before they even have a chance to knock.</p>
+
+            <div class="challenge-box">
+                <h3>🚧 The Hidden Education Crisis:</h3>
+                <ul>
+                    <li><strong>Millions excluded</strong>: Countless Indonesian youth unable to attend formal schooling</li>
+                    <li><strong>Economic barriers</strong>: Poverty forcing children to choose between school and survival</li>
+                    <li><strong>Geographic isolation</strong>: Areas where schools simply don't exist</li>
+                    <li><strong>Interrupted education</strong>: Life circumstances forcing students to pause or stop learning</li>
+                    <li><strong>Cycle of poverty</strong>: Without credentials, limited job prospects perpetuate disadvantage</li>
+                    <li><strong>Lost potential</strong>: Brilliant minds sidelined by systemic barriers</li>
+                </ul>
+            </div>
+
+            <p>But across Indonesia, individuals and groups refuse to accept this reality. They're answering the call to help, recognizing that education isn't a privilege-it's a right worth fighting for. One such initiative is <strong>Belajar Bersama</strong>, a high school student-founded club that's proving peer education can transform lives and break cycles of poverty.</p>
+
+            <h2>🌟 The Birth of Belajar Bersama</h2>
+            <p>Founded in 2021, Belajar Bersama emerged from a simple but powerful recognition: students who can't access formal education still deserve the chance to earn their credentials and build their futures. What makes this initiative remarkable isn't just its mission-it's who's leading it.</p>
+
+            <p><strong>High school students teaching other youth</strong>. Peers mentoring peers. Teenagers dedicating their time to ensure others don't get left behind. This wasn't a top-down government program or a professionally staffed NGO initiative. It was young people looking at their communities and deciding they had the power to make a difference.</p>
+
+            <div class="innovation-highlight">
+                <h3>🤝 The Partnership Model</h3>
+                <p>Rather than trying to build everything from scratch, Belajar Bersama partnered strategically with <strong>Nara Kreatif</strong>, an organization dedicated to non-formal education and national equivalency exam preparation. This partnership created a powerful combination:</p>
+                <ul>
+                    <li><strong>Nara Kreatif</strong> provides: Curriculum framework, exam registration, official educational structure, and connection to students in need</li>
+                    <li><strong>Belajar Bersama</strong> provides: Weekly tutoring, personalized teaching, mock exams, emotional support, and peer mentorship</li>
+                </ul>
+                <p>Together, they created a comprehensive support system that addresses both the academic and human elements of education.</p>
+            </div>
+
+            <h2>📋 Understanding the PKBM Pathway</h2>
+            <p>At the heart of Belajar Bersama's work is Indonesia's national equivalency exam system-the PKBM (Pusat Kegiatan Belajar Masyarakat). For students who can't access formal schooling, this system offers an alternative pathway to educational credentials through three levels of examinations:</p>
+
+            <div class="pathway-box">
+                <h3>🎓 The Three-Step Pathway to Educational Equality</h3>
+                <div class="pathway-steps">
+                    <div class="pathway-step">
+                        <div class="pathway-step-number">1</div>
+                        <h4>Paket A</h4>
+                        <p>Elementary school equivalency diploma - Foundation for all future learning</p>
+                    </div>
+                    <div class="pathway-step">
+                        <div class="pathway-step-number">2</div>
+                        <h4>Paket B</h4>
+                        <p>Middle school equivalency diploma - Opens doors to higher education paths</p>
+                    </div>
+                    <div class="pathway-step">
+                        <div class="pathway-step-number">3</div>
+                        <h4>Paket C</h4>
+                        <p>High school equivalency diploma - Same qualifications as formal schooling graduates</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>Passing these exams provides students with the <strong>same educational qualifications as those from formal schooling</strong>. This isn't a second-tier credential or an alternative track that limits future options-it's full educational equality, opening the same doors to employment and higher education that formal school graduates enjoy.</p>
+
+            <p>But knowing these exams exist and actually passing them are vastly different challenges. That's where Belajar Bersama makes the crucial difference.</p>
+
+            <h2>👥 How Belajar Bersama Works</h2>
+            <p>The heart of Belajar Bersama's approach is <strong>weekly tutoring sessions</strong> focused on mathematics and science-two critical subjects that often determine success or failure on the equivalency exams. But this isn't tutoring as lecture; it's education reimagined through peer connection.</p>
+
+            <h3>The Tutoring Model:</h3>
+            <ul>
+                <li><strong>Structured curriculum</strong>: Using Nara Kreatif's framework, tutors design comprehensive lesson plans</li>
+                <li><strong>Personalized teaching</strong>: Adapting approaches based on each student's understanding and learning style</li>
+                <li><strong>Practice problems</strong>: Creating exercises that build confidence and competence</li>
+                <li><strong>Mock exams</strong>: Simulating actual test conditions to reduce anxiety and identify gaps</li>
+                <li><strong>Consistent support</strong>: Weekly sessions that create routine and accountability</li>
+                <li><strong>Beyond academics</strong>: Building confidence and ensuring students believe in their own potential</li>
+            </ul>
+
+            <p>Every tutor in Belajar Bersama learns to identify learning gaps, explain complex concepts clearly, and adjust their teaching based on different levels of understanding. This experience doesn't just help the students being tutored-it transforms the tutors themselves, developing leadership, communication skills, and deep empathy for educational struggles many Indonesians face.</p>
+
+            <div class="stats-box">
+                <h3>📊 Impact by the Numbers:</h3>
+                <ul>
+                    <li><strong>60+ students</strong> helped to pass their national equivalency exams</li>
+                    <li><strong>Founded 2021</strong> - Four years of consistent impact</li>
+                    <li><strong>Weekly tutoring</strong> - Dozens of hours of dedicated teaching each month</li>
+                    <li><strong>Two core subjects</strong> - Mathematics and Science expertise</li>
+                    <li><strong>Mock exams</strong> - Comprehensive test preparation beyond content knowledge</li>
+                    <li><strong>Exam fee coverage</strong> - Historically removing financial barriers to testing</li>
+                    <li><strong>High school students</strong> - All tutors are current high school students</li>
+                </ul>
+            </div>
+
+            <h2>💡 Beyond Knowledge: Economic Transformation</h2>
+            <p>When asked about their philosophy, Belajar Bersama's response cuts to the heart of why education matters:</p>
+
+            <div class="quote-box">
+                Belajar Bersama is not simply about knowledge. Instead it opens up economic opportunity. With these diplomas, students are able to obtain higher-paying and skilled jobs, breaking the cycle of poverty and creating a brighter future for themselves, families, and Indonesia.
+            </div>
+
+            <p>This understanding-that education is fundamentally about <strong>economic opportunity</strong> rather than just academic achievement-shapes everything Belajar Bersama does. They recognize that for their students, passing these exams isn't about intellectual satisfaction or personal growth in the abstract. It's about:</p>
+
+            <ul>
+                <li><strong>Better jobs</strong>: Access to skilled positions that require educational credentials</li>
+                <li><strong>Higher wages</strong>: The ability to earn enough to support families and build stability</li>
+                <li><strong>Breaking cycles</strong>: Creating pathways out of poverty that echo through generations</li>
+                <li><strong>National development</strong>: Contributing skilled workers to Indonesia's growing economy</li>
+                <li><strong>Dignity and choice</strong>: The power to shape one's own future rather than being limited by circumstance</li>
+            </ul>
+
+            <h3>The Multiplier Effect</h3>
+            <p>When a single person gains education and economic opportunity, the ripple effects extend far beyond that individual. They support families who previously struggled. They model possibility for younger siblings and neighbors. They contribute to local economies. They break intergenerational patterns of limited opportunity.</p>
+
+            <p>Belajar Bersama isn't just teaching math and science-they're investing in Indonesia's future, one student at a time.</p>
+
+            <h2>🔄 The Dual Transformation</h2>
+            <p>What makes Belajar Bersama particularly special is how it transforms everyone involved-not just the students being tutored, but the tutors themselves. This is education as a tool for mutual growth.</p>
+
+            <h3>For Students Being Tutored:</h3>
+            <ul>
+                <li>Academic knowledge and test-taking skills</li>
+                <li>Confidence that they can succeed despite interrupted education</li>
+                <li>Connection to peers who believe in their potential</li>
+                <li>Practical pathway to economic opportunity</li>
+                <li>Proof that their circumstances don't define their futures</li>
+            </ul>
+
+            <h3>For Student Tutors:</h3>
+            <ul>
+                <li><strong>Leadership development</strong>: Taking responsibility for others' learning</li>
+                <li><strong>Teaching skills</strong>: Learning to explain concepts clearly and effectively</li>
+                <li><strong>Communication abilities</strong>: Adapting messaging to different audiences</li>
+                <li><strong>Empathy cultivation</strong>: Understanding struggles outside their own experience</li>
+                <li><strong>Problem-solving</strong>: Identifying learning gaps and creating solutions</li>
+                <li><strong>Perspective shift</strong>: Recognizing how privileged they are to access formal education</li>
+            </ul>
+
+            <p>Many students at Nara Kreatif have faced significant challenges-returning to school after long breaks, balancing part-time jobs with studies, overcoming family crises that interrupted their education. By working closely with these students, Belajar Bersama tutors develop a <strong>deeper understanding of educational inequality</strong> in Indonesia and the resilience required to overcome it.</p>
+
+            <h2>🚀 Growing the Vision</h2>
+            <p>Four years in, Belajar Bersama isn't resting on the success of helping 60+ students. They're planning strategic expansion that will multiply their impact while maintaining the quality that makes them effective.</p>
+
+            <h3>Current Focus:</h3>
+            <p>Belajar Bersama currently concentrates on <strong>mathematics and science</strong>-two subjects that require specialized knowledge and consistent practice. By focusing their expertise, they ensure high-quality teaching that actually prepares students to pass their exams.</p>
+
+            <h3>Next Phase Expansion:</h3>
+            <p>Through closer partnership with Nara Kreatif, Belajar Bersama plans to expand tutoring to additional subjects covered by the national equivalency exams:</p>
+            <ul>
+                <li><strong>Bahasa Indonesia</strong>: The language skills essential for success</li>
+                <li><strong>Civics</strong>: Understanding Indonesian government and citizenship</li>
+                <li><strong>Additional subjects</strong>: Comprehensive coverage of all exam requirements</li>
+            </ul>
+
+            <p>This expansion reflects Belajar Bersama's maturity as an organization. Rather than trying to do everything at once, they established excellence in core subjects first, then grew strategically based on both capacity and student need.</p>
+
+            <h2>🌱 The Simple Power of Teaching</h2>
+            <p>In their own words, Belajar Bersama explains what drives their work:</p>
+
+            <div class="quote-box">
+                Belajar Bersama isn't just another school club; it empowers students to learn, connect, and grow together through shared education. Teaching may seem simple, but it holds the power to change lives by helping others reach their full potential.
+            </div>
+
+            <p>This philosophy-that teaching is both simple and world-changing-captures the essence of what makes Belajar Bersama special. They don't need complex theories or massive resources. What they need, and what they provide, is:</p>
+
+            <ul>
+                <li>Students who care enough to show up week after week</li>
+                <li>Structured lessons that build competence step by step</li>
+                <li>A supportive atmosphere where struggling is okay and learning is celebrated</li>
+                <li>Consistent belief that every student deserves the chance to succeed</li>
+                <li>Recognition that education isn't charity-it's justice</li>
+            </ul>
+
+            <p>In a world that often makes problems seem impossibly large and solutions impossibly complex, Belajar Bersama reminds us that <strong>transformation can begin with students teaching students</strong>, peers supporting peers, and communities refusing to leave anyone behind.</p>
+        </article>
+
+        <!-- Action Cards -->
+        <div class="action-cards">
+            <h2>🎯 Support Education Access</h2>
+            
+            <div class="action-tier immediate">
+                <h3>🟢 Immediate Actions (5 minutes)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Follow Belajar Bersama</strong> on Instagram to learn about their work and upcoming needs
+                    </div>
+                    <div class="action-item">
+                        <strong>Share their story</strong> with educators and students who might want to replicate the model
+                    </div>
+                    <div class="action-item">
+                        <strong>Learn about PKBM exams</strong> and Indonesia's alternative education pathways
+                    </div>
+                    <div class="action-item">
+                        <strong>Spread awareness</strong> about education access challenges in Indonesia
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier engaged">
+                <h3>🟡 Engaged Actions (30 minutes - 2 hours)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Start a tutoring initiative</strong> at your school for students needing equivalency exam support
+                    </div>
+                    <div class="action-item">
+                        <strong>Volunteer as a tutor</strong> for Belajar Bersama or similar programs in your area
+                    </div>
+                    <div class="action-item">
+                        <strong>Connect Belajar Bersama</strong> with resources, funding sources, or partnership opportunities
+                    </div>
+                    <div class="action-item">
+                        <strong>Create study materials</strong> for PKBM exam subjects and share them freely
+                    </div>
+                    <div class="action-item">
+                        <strong>Organize fundraising</strong> to help cover exam fees for students who can't afford them
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier committed">
+                <h3>🔴 Committed Actions (Ongoing involvement)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Partner with Nara Kreatif</strong> to expand equivalency exam support programs
+                    </div>
+                    <div class="action-item">
+                        <strong>Advocate for education policy</strong> that supports alternative pathways to credentials
+                    </div>
+                    <div class="action-item">
+                        <strong>Build a peer tutoring network</strong> connecting students across multiple schools
+                    </div>
+                    <div class="action-item">
+                        <strong>Fund exam fees systematically</strong> so financial barriers never prevent testing
+                    </div>
+                    <div class="action-item">
+                        <strong>Mentor Belajar Bersama</strong> as they scale to new subjects and reach more students
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="related-content">
+            <h2>📚 Related Stories</h2>
+            <div class="related-links">
+                <a href="/stories/education-equity-indonesia">Education Access and Equity in Indonesia</a>
+                <a href="/stories/peer-to-peer-learning">The Power of Peer-to-Peer Education</a>
+                <a href="/stories/youth-led-social-change">Youth-Led Social Change Initiatives</a>
+                <a href="/stories/breaking-poverty-cycles">Breaking Cycles of Poverty Through Education</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ConnectED</h3>
+                <p>Founded in Jakarta in 2025, we capture the quiet, everyday stories that bridge divides and inspire positive change across Indonesia. Our mission is to humanize the world through authentic storytelling.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Content</h4>
+                <ul class="footer-links">
+                    <li><a href="/stories">Stories</a></li>
+                    <li><a href="/voices">Voices Podcast</a></li>
+                    <li><a href="/perspectives">Perspectives</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul class="footer-links">
+                    <li><a href="/volunteer">Volunteer</a></li>
+                    <li><a href="/share">Share Your Story</a></li>
+                    <li><a href="/partners">Partners</a></li>
+                    <li><a href="/events">Events</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul class="footer-links">
+                    <li><a href="/about">Our Mission</a></li>
+                    <li><a href="/team">Team</a></li>
+                    <li><a href="/impact">Impact Report</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 ConnectED Foundation. All rights reserved. Made with ❤️ for Indonesian communities.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Reading progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            let progressBar = document.querySelector('.reading-progress');
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.className = 'reading-progress';
+                progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 3px;
+                    background: linear-gradient(135deg, #27ae60, #2ecc71);
+                    z-index: 9999;
+                    transition: width 0.3s ease;
+                `;
+                document.body.appendChild(progressBar);
+            }
+            
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

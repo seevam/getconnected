@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowerED: Opening Doors to Higher Education for Refugee Students - ConnectED</title>
+    <meta name="description" content="How a Singapore student is creating pathways to higher education for Rohingya refugee students in Malaysia. A story of educational equity and youth leadership.">
+    <meta name="keywords" content="EmpowerED, refugee education, Rohingya students, higher education access, youth leadership, educational equity">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #fafafa;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            color: white !important;
+            padding: 0.7rem 1.5rem !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #3498db, #2980b9, #667eea);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(52, 152, 219, 0.8) 0%, 
+                rgba(41, 128, 185, 0.6) 50%, 
+                rgba(102, 126, 234, 0.8) 100%);
+        }
+
+        .article-image::after {
+            content: '🎓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.7;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .article-content strong {
+            color: #3498db;
+            font-weight: 700;
+        }
+
+        .article-content em {
+            color: #2980b9;
+            font-style: italic;
+        }
+
+        .stats-box {
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .stats-box h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .stats-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stats-box li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .stats-box li:last-child {
+            border-bottom: none;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #3498db;
+            font-family: serif;
+        }
+
+        .innovation-highlight {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(102, 126, 234, 0.1));
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .innovation-highlight h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .challenge-box {
+            background: rgba(231, 76, 60, 0.05);
+            border-left: 4px solid #e74c3c;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .challenge-box h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        /* Action Cards */
+        .action-cards {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .action-cards h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .action-tier {
+            margin-bottom: 2.5rem;
+        }
+
+        .action-tier h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-tier.immediate h3 { color: #27ae60; }
+        .action-tier.engaged h3 { color: #f39c12; }
+        .action-tier.committed h3 { color: #e74c3c; }
+
+        .action-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-item {
+            background: rgba(52, 152, 219, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .action-item strong {
+            color: #3498db;
+        }
+
+        /* Related Content */
+        .related-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .related-content h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-link {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(52, 152, 219, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .related-link:hover {
+            background: rgba(52, 152, 219, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">ConnectED</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/stories">Stories</a></li>
+                <li><a href="/voices">Voices</a></li>
+                <li><a href="/perspectives">Perspectives</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/volunteer">Volunteer</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/share" class="nav-cta">Share Your Story</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="meta-item">Educational Equity</span>
+                <span class="meta-item">📍 Singapore → Johor, Malaysia</span>
+                <span class="meta-item">🕒 6 min read</span>
+                <span class="meta-item">📅 October 6, 2025</span>
+            </div>
+            <h1 class="article-title">EmpowerED: Opening Doors to Higher Education for Refugee Students</h1>
+            <p class="article-subtitle">How one student's college journey inspired her to create pathways for Rohingya refugee students navigating the impossible transition to university</p>
+        </header>
+
+        <!-- Article Image -->
+        <div class="article-image">
+            <div class="image-caption">Bridging the gap between displacement and opportunity through education</div>
+        </div>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <h2>🌍 The Invisible Barrier</h2>
+            <p>In Malaysia's southern region of Johor, thousands of refugee students face a paradox that defines modern displacement: they can access basic education, but the pathway to higher education remains almost impossibly distant. For many in the Rohingya community, there exists a rare school that offers hope-a bridge to tertiary education in the Philippines-but the resources to actually cross that bridge are virtually nonexistent.</p>
+
+            <p>Imagine preparing for the most important transition of your life with nothing but instinct to guide you. No college counselors. No alumni networks. No comprehensive guides about different fields of study. No interview preparation. Just hope, determination, and the overwhelming uncertainty that comes with navigating unfamiliar systems while carrying the weight of displacement.</p>
+
+            <p>This is the reality for refugee students in Johor who dream of higher education. And it's a reality that <strong>Saanvi Kedia</strong>, a student in Singapore, couldn't accept.</p>
+
+            <h2>🎓 When Your Own Privilege Becomes Your Call to Action</h2>
+            <p>Saanvi's journey to founding <strong>EmpowerED</strong> began with a moment of realization that changed everything. As she navigated her own college application process-researching universities, exploring different academic paths, preparing for interviews-she was surrounded by resources. Shared experiences from older students. Guidance counselors who understood the system. Access to information about every possible pathway.</p>
+
+            <div class="quote-box">
+                As a student who is also navigating her own college journey, I have relied so much on shared resources. I can't imagine going through this process without the same kind of access and freedom to make decisions.
+            </div>
+
+            <p>That privilege became impossible to ignore. While she had the luxury of exploring options and making informed choices, students just across the border in Johor faced their futures with only instinct and limited information. The inequity wasn't just unfair-it was preventable.</p>
+
+            <div class="challenge-box">
+                <h3>🚧 The Reality Refugee Students Face:</h3>
+                <ul>
+                    <li><strong>Limited pathway awareness</strong>: Many don't even know what fields of study exist</li>
+                    <li><strong>Zero soft skills training</strong>: No preparation for interviews, networking, or professional communication</li>
+                    <li><strong>Resource scarcity</strong>: Minimal access to college application guidance or comparative information</li>
+                    <li><strong>Isolation</strong>: No alumni network or mentors who understand their unique circumstances</li>
+                    <li><strong>Decision paralysis</strong>: Without information, life-changing choices become shots in the dark</li>
+                </ul>
+            </div>
+
+            <h2>💡 Building Bridges Through Information</h2>
+            <p>EmpowerED's approach is as practical as it is transformative. Rather than trying to solve every challenge refugee students face, Saanvi focused on what she knew could create immediate impact: <strong>democratizing access to information and skills</strong>.</p>
+
+            <p>The platform centers on two interconnected pillars:</p>
+
+            <h3>📚 Pathway Discovery & College Navigation</h3>
+            <p>EmpowerED creates comprehensive resources about different fields of study, college programs, and career pathways. Students can explore options they never knew existed, compare different academic routes, and make informed decisions about their futures. The platform translates complex educational systems into accessible information that empowers rather than overwhelms.</p>
+
+            <h3>🎯 Essential Soft Skills Development</h3>
+            <p>Beyond academic information, EmpowerED addresses the hidden curriculum that privileged students absorb through osmosis but refugee students rarely encounter:</p>
+            <ul>
+                <li><strong>Interview preparation</strong>: From college admissions to eventual job searches</li>
+                <li><strong>Professional communication</strong>: Email etiquette, networking basics, self-presentation</li>
+                <li><strong>Application strategies</strong>: How to tell your story effectively and authentically</li>
+                <li><strong>Confidence building</strong>: Overcoming imposter syndrome and advocating for yourself</li>
+            </ul>
+
+            <div class="innovation-highlight">
+                <h3>🌟 The Power of Peer-to-Peer Learning</h3>
+                <p>What makes EmpowerED particularly effective is Saanvi's position as a fellow student. She's not speaking from the distant perspective of an adult who completed university decades ago-she's navigating the same challenges in real-time. This creates a unique credibility and relatability that traditional educational programs often lack.</p>
+                <p>Students aren't just receiving information; they're learning from someone who understands exactly what they're going through.</p>
+            </div>
+
+            <h2>🚀 From Idea to Impact: The Launch Journey</h2>
+            <p>Founded in 2025 and based in Singapore, EmpowerED is preparing for its official launch with a clear mission: <strong>ensure that every refugee student, regardless of background, has access to the same information and opportunities</strong> that students in better-resourced communities take for granted.</p>
+
+            <p>The platform's initial focus is the Rohingya refugee community in Johor, Malaysia-students who have demonstrated incredible resilience in pursuing education despite immense obstacles. But the vision extends beyond geography. Saanvi is already considering expansion into India, recognizing that educational inequity affects displaced communities globally.</p>
+
+            <h3>Measured Success Through Student Engagement</h3>
+            <p>EmpowerED defines success not through abstract metrics but through tangible student outcomes:</p>
+            <ul>
+                <li><strong>Exploration and discovery</strong>: Students encountering pathways they wouldn't have otherwise known existed</li>
+                <li><strong>Confident decision-making</strong>: Informed choices about academic directions and career paths</li>
+                <li><strong>Skill acquisition</strong>: Practical abilities that ease the transition from school to university to eventual employment</li>
+                <li><strong>Reduced anxiety</strong>: The confidence that comes from preparation and information</li>
+            </ul>
+
+            <h2>🌱 The Philosophy of Starting Now</h2>
+            <p>When asked what advice she'd give to others who want to create change, Saanvi's response reflects the urgency that drives EmpowerED:</p>
+
+            <div class="quote-box">
+                If you have an idea, start working on it as soon as possible. Once the momentum starts, it's easy to keep going.
+            </div>
+
+            <p>This philosophy of action over endless planning has shaped EmpowerED's development. Rather than waiting for perfect conditions or comprehensive funding, Saanvi began building immediately-creating resources, establishing connections, and preparing to serve students who couldn't afford to wait.</p>
+
+            <p>The approach acknowledges a crucial truth: <strong>for students navigating college applications right now, "someday" isn't good enough</strong>. Each year of delay means another cohort of students making life-defining decisions without adequate support.</p>
+
+            <h2>🔮 Growing Impact, Expanding Reach</h2>
+            <p>As EmpowerED prepares to launch, Saanvi is already thinking about sustainable growth and continuous improvement. The roadmap reflects both ambition and pragmatism:</p>
+
+            <h3>Near-Term Goals:</h3>
+            <ul>
+                <li><strong>Launch comprehensive resource library</strong> covering major fields of study and career pathways</li>
+                <li><strong>Develop soft skills curriculum</strong> with practical, actionable guidance</li>
+                <li><strong>Build direct relationships</strong> with refugee students in Johor</li>
+                <li><strong>Gather continuous feedback</strong> to refine and improve resources</li>
+                <li><strong>Create mentorship connections</strong> between current students and those ahead in their journeys</li>
+            </ul>
+
+            <h3>Long-Term Vision:</h3>
+            <ul>
+                <li><strong>Geographic expansion</strong>: Bringing similar resources to refugee communities in India and beyond</li>
+                <li><strong>Partnership development</strong>: Collaborating with existing refugee support organizations</li>
+                <li><strong>Alumni network creation</strong>: Connecting students who've successfully navigated the process</li>
+                <li><strong>Resource localization</strong>: Adapting materials for different contexts and educational systems</li>
+                <li><strong>Scalable platform</strong>: Building technology infrastructure that can serve growing numbers of students</li>
+            </ul>
+
+            <h2>💪 The Multiplier Effect of Educational Access</h2>
+            <p>EmpowerED's impact extends far beyond individual college applications. When refugee students gain access to higher education with proper preparation and information, the ripple effects transform entire communities:</p>
+
+            <ul>
+                <li><strong>Economic mobility</strong>: Education creates pathways out of poverty and displacement</li>
+                <li><strong>Community leadership</strong>: Educated individuals return to serve their communities</li>
+                <li><strong>Intergenerational change</strong>: Parents who accessed education prioritize it for their children</li>
+                <li><strong>Breaking cycles</strong>: Education disrupts patterns of disadvantage and limited opportunity</li>
+                <li><strong>Representation matters</strong>: Success stories inspire the next generation to believe they can also achieve their dreams</li>
+            </ul>
+
+            <h2>🌟 A Call to Shared Humanity</h2>
+            <p>EmpowerED represents more than a platform or an initiative-it's a declaration that <strong>educational opportunity shouldn't depend on the circumstances of your birth</strong>. Refugee students possess the same potential, dreams, and determination as students anywhere in the world. They face the same anxieties about choosing the right major, preparing for interviews, and making life-defining decisions.</p>
+
+            <p>The only difference is access to information and support. And that difference, as Saanvi demonstrates, is entirely within our power to address.</p>
+
+            <p>By building EmpowerED while still navigating her own college journey, Saanvi embodies a crucial truth about social change: you don't need to have all the answers or wait until you're "qualified enough." You just need to recognize an injustice, commit to addressing it, and start building solutions now.</p>
+        </article>
+
+        <!-- Action Cards -->
+        <div class="action-cards">
+            <h2>🎯 Support Educational Equity</h2>
+            
+            <div class="action-tier immediate">
+                <h3>🟢 Immediate Actions (5 minutes)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Follow EmpowerED</strong> on social media to stay updated on the launch
+                    </div>
+                    <div class="action-item">
+                        <strong>Share college resources</strong> that helped you navigate your own journey
+                    </div>
+                    <div class="action-item">
+                        <strong>Learn about refugee education</strong> challenges and opportunities
+                    </div>
+                    <div class="action-item">
+                        <strong>Spread awareness</strong> about EmpowerED with educators and counselors
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier engaged">
+                <h3>🟡 Engaged Actions (30 minutes - 2 hours)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Share career insights</strong> from your own field of study or profession
+                    </div>
+                    <div class="action-item">
+                        <strong>Volunteer as a mentor</strong> for refugee students navigating college applications
+                    </div>
+                    <div class="action-item">
+                        <strong>Contribute resources</strong> about specific academic programs or career pathways
+                    </div>
+                    <div class="action-item">
+                        <strong>Connect EmpowerED</strong> with refugee support organizations you know
+                    </div>
+                    <div class="action-item">
+                        <strong>Conduct mock interviews</strong> to help students build confidence and skills
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier committed">
+                <h3>🔴 Committed Actions (Ongoing involvement)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Partner with EmpowerED</strong> through your educational institution or organization
+                    </div>
+                    <div class="action-item">
+                        <strong>Provide funding support</strong> to expand platform reach and resources
+                    </div>
+                    <div class="action-item">
+                        <strong>Advocate for refugee education</strong> policies and support systems
+                    </div>
+                    <div class="action-item">
+                        <strong>Create scholarship opportunities</strong> specifically for refugee students
+                    </div>
+                    <div class="action-item">
+                        <strong>Build similar initiatives</strong> in other communities facing educational barriers
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="related-content">
+            <h2>📚 Related Stories</h2>
+            <div class="related-links">
+                <a href="/stories/youth-leadership-education">Youth-Led Educational Initiatives</a>
+                <a href="/stories/refugee-empowerment">Empowering Displaced Communities</a>
+                <a href="/stories/educational-equity">Breaking Barriers to Higher Education</a>
+                <a href="/stories/peer-to-peer-learning">The Power of Peer-to-Peer Support</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ConnectED</h3>
+                <p>Founded in Jakarta in 2025, we capture the quiet, everyday stories that bridge divides and inspire positive change across Indonesia. Our mission is to humanize the world through authentic storytelling.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Content</h4>
+                <ul class="footer-links">
+                    <li><a href="/stories">Stories</a></li>
+                    <li><a href="/voices">Voices Podcast</a></li>
+                    <li><a href="/perspectives">Perspectives</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul class="footer-links">
+                    <li><a href="/volunteer">Volunteer</a></li>
+                    <li><a href="/share">Share Your Story</a></li>
+                    <li><a href="/partners">Partners</a></li>
+                    <li><a href="/events">Events</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul class="footer-links">
+                    <li><a href="/about">Our Mission</a></li>
+                    <li><a href="/team">Team</a></li>
+                    <li><a href="/impact">Impact Report</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 ConnectED Foundation. All rights reserved. Made with ❤️ for Indonesian communities.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Reading progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            let progressBar = document.querySelector('.reading-progress');
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.className = 'reading-progress';
+                progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 3px;
+                    background: linear-gradient(135deg, #3498db, #2980b9);
+                    z-index: 9999;
+                    transition: width 0.3s ease;
+                `;
+                document.body.appendChild(progressBar);
+            }
+            
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

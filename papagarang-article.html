@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Papagarang: Fighting Stunting Through Sanitation - ConnectED</title>
+    <meta name="description" content="How Indonesian high school students are transforming Papagarang Island by building toilets to combat stunting. A story of youth leadership and community impact.">
+    <meta name="keywords" content="Project Papagarang, stunting, sanitation, youth leadership, Indonesia, community impact">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #fafafa;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            color: white !important;
+            padding: 0.7rem 1.5rem !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(102, 126, 234, 0.8) 0%, 
+                rgba(118, 75, 162, 0.6) 50%, 
+                rgba(240, 147, 251, 0.8) 100%);
+        }
+
+        .article-image::after {
+            content: '🏝️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.7;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .article-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .article-content em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        .stats-box {
+            background: rgba(102, 126, 234, 0.05);
+            border-left: 4px solid #667eea;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .stats-box h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .stats-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stats-box li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .stats-box li:last-child {
+            border-bottom: none;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #667eea;
+            font-family: serif;
+        }
+
+        /* Action Cards */
+        .action-cards {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .action-cards h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .action-tier {
+            margin-bottom: 2.5rem;
+        }
+
+        .action-tier h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-tier.immediate h3 { color: #27ae60; }
+        .action-tier.engaged h3 { color: #f39c12; }
+        .action-tier.committed h3 { color: #e74c3c; }
+
+        .action-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-item {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .action-item strong {
+            color: #667eea;
+        }
+
+        /* Related Content */
+        .related-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .related-content h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-link {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(102, 126, 234, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .related-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">ConnectED</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/stories">Stories</a></li>
+                <li><a href="/voices">Voices</a></li>
+                <li><a href="/perspectives">Perspectives</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/volunteer">Volunteer</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/share" class="nav-cta">Share Your Story</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="meta-item">Community Impact</span>
+                <span class="meta-item">📍 Papagarang Island, Nusa Tenggara Timur</span>
+                <span class="meta-item">🕒 6 min read</span>
+                <span class="meta-item">📅 July 15, 2025</span>
+            </div>
+            <h1 class="article-title">Project Papagarang: How High School Students Are Transforming an Island Through Simple Toilets</h1>
+        </header>
+
+        <!-- Article Image -->
+        <div class="article-image">
+            <div class="image-caption">The stunning landscape of Nusa Tenggara Timur, where beauty masks a hidden health crisis</div>
+        </div>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <h2>🏝️ The Hidden Crisis Behind Paradise</h2>
+            <p>East Nusa Tenggara Timur captivates visitors with its breathtaking landscapes, pristine waters, and legendary komodo dragons. Tourism brochures showcase dramatic clifftop views and crystal-clear lagoons that seem untouched by time. But beneath this postcard-perfect surface lies a silent crisis that threatens the future of Indonesia's most remote communities: <strong>stunting</strong>.</p>
+
+            <p>The statistics are sobering. In Indonesia, stunting affects between 25-30% of children under five years old, with rural and underdeveloped areas like Nusa Tenggara Timur bearing the heaviest burden. This isn't just a number—it's a generational tragedy. Stunted children face lifelong consequences: difficulty learning in school, reduced earning potential as adults, and a higher likelihood of perpetuating the cycle of poverty for their own children.</p>
+
+            <p>Among the communities most affected is the remote fishing island of <strong>Papagarang</strong>, where traditional ways of life meet modern health challenges in ways that few outsiders understand.</p>
+
+            <h2>🌟 When Youth Refused to Accept the Status Quo</h2>
+            <p>While most teenagers their age were focused on exams and university applications, a group of passionate Indonesian high school students saw the stunting crisis on Papagarang Island and decided they couldn't stand by and watch. But rather than following conventional approaches focused primarily on nutrition, these young changemakers identified something that others had overlooked: <strong>the critical link between sanitation and stunting</strong>.</p>
+
+            <p><strong>Project Papagarang</strong> was born from this insight. The students discovered that the island's lack of proper sanitation facilities was creating a dangerous cycle—continuous exposure to unsanitary conditions and open defecation was directly contributing to the stunting epidemic affecting the community's youngest members.</p>
+
+            <div class="quote-box">
+                We realized that you can provide all the nutritious food in the world, but if children are constantly exposed to harmful bacteria and diseases from poor sanitation, their bodies can't properly absorb those nutrients.
+            </div>
+
+            <h2>🛠️ Simple Solutions, Profound Impact</h2>
+            <p>What followed was a masterclass in grassroots organizing and community partnership. The students didn't arrive with predetermined solutions—they sat down with local community leaders and residents, listened to their experiences, and worked together to identify the most practical and sustainable interventions.</p>
+
+            <p>The approach was as brilliant as it was simple: <strong>construct low-cost, high-impact toilets for households across the island</strong>.</p>
+
+            <div class="stats-box">
+                <h3>The Numbers Tell the Story:</h3>
+                <ul>
+                    <li><strong>IDR 30 million (USD $2,400)</strong> raised through dedicated fundraising efforts</li>
+                    <li><strong>6 toilets</strong> completed to date, with many more in construction</li>
+                    <li><strong>Dozens of families</strong> directly impacted by improved sanitation</li>
+                    <li><strong>Hundreds of children</strong> who will benefit from reduced exposure to disease</li>
+                </ul>
+            </div>
+
+            <p>But the project's true innovation goes beyond construction. Understanding that infrastructure alone isn't enough, the students made <strong>education and maintenance</strong> central to their mission. They work with families to ensure proper hygiene practices and help establish systems to keep the facilities clean and functional long-term.</p>
+
+            <h2>🤝 Community Partnership in Action</h2>
+            <p>What makes Project Papagarang remarkable isn't just the toilets themselves—it's the way the students approached community engagement. Rather than imposing outside solutions, they:</p>
+
+            <ul>
+                <li><strong>Built relationships first</strong>: Spent time understanding local customs and needs</li>
+                <li><strong>Included families in planning</strong>: Ensured toilet designs met actual usage patterns</li>
+                <li><strong>Provided ongoing support</strong>: Established maintenance systems and hygiene education</li>
+                <li><strong>Celebrated local knowledge</strong>: Combined traditional practices with modern sanitation principles</li>
+            </ul>
+
+            <p>The result is a program that doesn't just address immediate needs but builds lasting capacity within the community itself.</p>
+
+            <h2>🌍 The Ripple Effect of Simple Dignity</h2>
+            <p>Each toilet represents more than improved sanitation—it's a foundation for human dignity, health, and opportunity. When families have access to proper facilities:</p>
+
+            <ul>
+                <li>Children, especially girls, can attend school more regularly</li>
+                <li>Mothers spend less time caring for sick children</li>
+                <li>The entire community faces reduced healthcare costs</li>
+                <li>Economic opportunities improve as health outcomes stabilize</li>
+            </ul>
+
+            <p>The students behind Project Papagarang understand that <strong>meaningful change often comes from addressing fundamental needs that others take for granted</strong>. Their work demonstrates how young people, when equipped with passion and community support, can tackle complex challenges through surprisingly simple solutions.</p>
+
+            <h2>🌅 The Future of Papagarang</h2>
+            <p>Project Papagarang represents more than a successful student initiative—it's a template for how young people can create lasting change when they combine passion with practical action. As the toilets continue to be built and maintained, the island's stunting rates are expected to decrease, giving children the healthy start they deserve.</p>
+
+            <p>The students behind this project are already planning their next phase, which includes:</p>
+            <ul>
+                <li><strong>Expanding to neighboring islands</strong> with similar challenges</li>
+                <li><strong>Developing hygiene education curricula</strong> for schools</li>
+                <li><strong>Training local youth</strong> to become sanitation advocates</li>
+                <li><strong>Partnering with government programs</strong> for larger-scale impact</li>
+            </ul>
+
+            <p>Their story reminds us that <strong>transformation doesn't always require massive resources or complex solutions</strong>—sometimes it starts with young people who refuse to accept that suffering is inevitable.</p>
+        </article>
+
+        <!-- Action Cards -->
+        <div class="action-cards">
+            <h2>🎯 Join This Movement</h2>
+            
+            <div class="action-tier immediate">
+                <h3>🟢 Immediate Actions (5 minutes)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Share this story</strong> on social media with #ProjectPapagarang
+                    </div>
+                    <div class="action-item">
+                        <strong>Learn more</strong> about the connection between sanitation and stunting
+                    </div>
+                    <div class="action-item">
+                        <strong>Follow Project Papagarang</strong> on social media for updates
+                    </div>
+                    <div class="action-item">
+                        <strong>Tag 3 friends</strong> who care about community health and youth leadership
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier engaged">
+                <h3>🟡 Engaged Actions (30 minutes - 2 hours)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Donate directly</strong> to Project Papagarang's toilet construction fund
+                    </div>
+                    <div class="action-item">
+                        <strong>Research stunting</strong> in your own community or region
+                    </div>
+                    <div class="action-item">
+                        <strong>Connect the project</strong> with relevant NGOs or health organizations
+                    </div>
+                    <div class="action-item">
+                        <strong>Volunteer your skills</strong> (fundraising, social media, design, etc.)
+                    </div>
+                    <div class="action-item">
+                        <strong>Organize a fundraising event</strong> at your school or workplace
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-tier committed">
+                <h3>🔴 Committed Actions (Ongoing involvement)</h3>
+                <div class="action-list">
+                    <div class="action-item">
+                        <strong>Partner with Project Papagarang</strong> through your organization's CSR program
+                    </div>
+                    <div class="action-item">
+                        <strong>Advocate for sanitation funding</strong> in Indonesian government budgets
+                    </div>
+                    <div class="action-item">
+                        <strong>Start a similar project</strong> in another underserved community
+                    </div>
+                    <div class="action-item">
+                        <strong>Support policy changes</strong> that prioritize rural sanitation infrastructure
+                    </div>
+                    <div class="action-item">
+                        <strong>Mentor young activists</strong> who want to tackle similar challenges
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="related-content">
+            <h2>📚 Related Stories</h2>
+            <div class="related-links">
+                <a href="/stories/youth-leadership-rural-indonesia">Youth Leadership in Rural Indonesia</a>
+                <a href="/stories/simple-solutions-complex-problems">The Power of Simple Solutions</a>
+                <a href="/stories/building-healthy-communities">Building Healthy Communities</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ConnectED</h3>
+                <p>Founded in Jakarta in 2025, we capture the quiet, everyday stories that bridge divides and inspire positive change across Indonesia. Our mission is to humanize the world through authentic storytelling.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Content</h4>
+                <ul class="footer-links">
+                    <li><a href="/stories">Stories</a></li>
+                    <li><a href="/voices">Voices Podcast</a></li>
+                    <li><a href="/perspectives">Perspectives</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul class="footer-links">
+                    <li><a href="/volunteer">Volunteer</a></li>
+                    <li><a href="/share">Share Your Story</a></li>
+                    <li><a href="/partners">Partners</a></li>
+                    <li><a href="/events">Events</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul class="footer-links">
+                    <li><a href="/about">Our Mission</a></li>
+                    <li><a href="/team">Team</a></li>
+                    <li><a href="/impact">Impact Report</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 ConnectED Foundation. All rights reserved. Made with ❤️ for Indonesian communities.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Reading progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            let progressBar = document.querySelector('.reading-progress');
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.className = 'reading-progress';
+                progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 3px;
+                    background: linear-gradient(135deg, #667eea, #764ba2);
+                    z-index: 9999;
+                    transition: width 0.3s ease;
+                `;
+                document.body.appendChild(progressBar);
+            }
+            
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

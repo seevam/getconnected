@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - ConnectED | Stories, Insights & Community Updates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background: #fafafa;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            color: white !important;
+            padding: 0.7rem 1.5rem !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+        }
+
+        /* Blog Header */
+        .blog-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: breathe 8s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .blog-header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .blog-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Blog Navigation */
+        .blog-nav {
+            background: white;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .blog-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .blog-categories {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-radius: 25px;
+            background: transparent;
+            color: #667eea;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .blog-search {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 0.8rem 1.2rem;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-radius: 25px;
+            font-size: 1rem;
+            width: 300px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Blog Content */
+        .blog-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 4rem;
+        }
+
+        .blog-main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .featured-post-image {
+            height: 300px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-post-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(102, 126, 234, 0.8) 0%, 
+                rgba(118, 75, 162, 0.6) 50%, 
+                rgba(240, 147, 251, 0.8) 100%);
+        }
+
+        .featured-post-image::after {
+            content: '✨';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.6;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .featured-post-content {
+            padding: 2.5rem;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .post-category {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .featured-post h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .featured-post p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+
+        .read-more::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Blog Posts Grid */
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .blog-post-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            position: relative;
+        }
+
+        .blog-post-image::after {
+            content: attr(data-icon);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            opacity: 0.7;
+        }
+
+        .blog-post-content {
+            padding: 2rem;
+        }
+
+        .blog-post h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .blog-post p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Sidebar */
+        .blog-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .recent-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .recent-post {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .recent-post:hover {
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .recent-post-image {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .recent-post-content h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+            line-height: 1.3;
+        }
+
+        .recent-post-date {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .newsletter-signup {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-signup h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-signup p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .pagination a,
+        .pagination span {
+            padding: 0.8rem 1.2rem;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-radius: 8px;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover,
+        .pagination .current {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .blog-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .blog-sidebar {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-rows: auto;
+                display: grid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .blog-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .blog-nav-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .blog-search {
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">ConnectED</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/stories">Stories</a></li>
+                <li><a href="/voices">Voices</a></li>
+                <li><a href="/perspectives">Perspectives</a></li>
+                <li><a href="/blog" class="active">Blog</a></li>
+                <li><a href="/volunteer">Volunteer</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/share" class="nav-cta">Share Your Story</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="blog-header-content">
+            <div class="blog-badge">📝 ConnectED Blog</div>
+            <h1>Stories, Insights & Community Updates</h1>
+            <p>Dive deeper into the stories behind our storytelling. Explore insights, community updates, and behind-the-scenes content from our mission to humanize the world through authentic narratives.</p>
+        </div>
+    </section>
+
+    <!-- Blog Navigation -->
+    <section class="blog-nav">
+        <div class="blog-nav-content">
+            <div class="blog-categories">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="community">Community</button>
+                <button class="category-btn" data-category="insights">Insights</button>
+                <button class="category-btn" data-category="behind-scenes">Behind the Scenes</button>
+                <button class="category-btn" data-category="impact">Impact Stories</button>
+                <button class="category-btn" data-category="updates">Updates</button>
+            </div>
+            <div class="blog-search">
+                <input type="text" class="search-input" placeholder="Search blog posts..." id="searchInput">
+                <button class="search-btn" onclick="searchPosts()">🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <div class="blog-content">
+        <!-- Main Content -->
+        <main class="blog-main">
+            <!-- Featured Post -->
+            <article class="featured-post">
+                <div class="featured-post-image">
+                    <div class="featured-badge">Featured</div>
+                </div>
+                <div class="featured-post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Community</span>
+                        <span>📅 July 15, 2025</span>
+                        <span>✍️ By Ari & Shivam</span>
+                        <span>🕒 8 min read</span>
+                    </div>
+                    <h2>The Power of Human Connection: Lessons from Papagarang Island</h2>
+                    <p>Our recent journey to Papagarang Island in Nusa Tenggara Timur opened our eyes to the incredible resilience of remote fishing communities. In this deep dive, we explore how storytelling became a bridge between isolation and connection, and what urban communities can learn from traditional ways of life.</p>
+                    <a href="/blog/papagarang-island-lessons" class="read-more">Read Full Article</a>
+                </div>
+            </article>
+
+            <!-- Blog Posts Grid -->
+            <div class="blog-posts">
+                                <article class="blog-post" data-category="insights">
+                    <div class="blog-post-image" data-icon="💡"></div>
+                    <div class="blog-post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Insights</span>
+                            <span>📅 July 10, 2025</span>
+                            <span>🕒 5 min read</span>
+                        </div>
+                        <h3>Open Door: When AI Meets Compassion for Migrant Workers</h3>
+                        <p>How a student's daily observations transformed into an AI chatbot helping migrant workers access affordable resources in Singapore</p>
+                        <a href="/opendoor.html" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-post" data-category="insights">
+                    <div class="blog-post-image" data-icon="💡"></div>
+                    <div class="blog-post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Insights</span>
+                            <span>📅 July 10, 2025</span>
+                            <span>🕒 5 min read</span>
+                        </div>
+                        <h3>Why Local Stories Matter in Global Conversations</h3>
+                        <p>Exploring how community-level narratives shape broader social movements and create lasting impact beyond their immediate context.</p>
+                        <a href="/blog/local-stories-global-impact" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="behind-scenes">
+                    <div class="blog-post-image" data-icon="🎬"></div>
+                    <div class="blog-post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Behind the Scenes</span>
+                            <span>📅 July 8, 2025</span>
+                            <span>🕒 4 min read</span>
+                        </div>
+                        <h3>Building ConnectED: From Idea to Impact Platform</h3>
+                        <p>A candid look at our journey from university project to community-driven storytelling platform, including the challenges we faced and lessons learned.</p>
+                        <a href="/blog/building-connected-platform" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="community">
+                    <div class="blog-post-image" data-icon="🤝"></div>
+                    <div class="blog-post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Community</span>
+                            <span>📅 July 5, 2025</span>
+                            <span>🕒 6 min read</span>
+                        </div>
+                        <h3>Volunteer Spotlight: Meet Our Community Champions</h3>
+                        <p>Getting to know the incredible volunteers who make ConnectED possible, from content creators to community liaisons across Indonesia.</p>
+                        <a href="/blog/volunteer-spotlight-champions" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="impact">
+                    <div class="blog-post-image" data-icon="📊"></div>
+                    <div class="blog-post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Impact</span>
+                            <span>📅 July 3, 2025</span>
+                            <span>🕒 7 min read</span>
+                        </div>
+                        <h3>Measuring Impact: How Stories Create Real Change</h3>
+                        <p>An in-depth analysis of how our stories have influenced policy discussions, community initiatives, and individual perspectives across Indonesia.</p>
+                        <a href="/blog/measuring-storytelling-impact" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="updates">
+                    <div class="blog-post-image" data-icon="📢"></div>
+                    <div class="blog-post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Updates</span>
+                            <span>📅 June 30, 2025</span>
+                            <span>🕒 3 min read</span>
+                        </div>
+                        <h3>Platform Updates: New Features and Improvements</h3>
+                        <p>Discover the latest enhancements to our storytelling platform, including improved volunteer matching and enhanced community features.</p>
+                        <a href="/blog/platform-updates-june-2025" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="insights">
+                    <div class="blog-post-image" data-icon="🎙️"></div>
+                    <div class="blog-post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Insights</span>
+                            <span>📅 June 28, 2025</span>
+                            <span>🕒 5 min read</span>
+                        </div>
+                        <h3>The Art of Authentic Interviewing: Lessons from Our Podcast</h3>
+                        <p>What we've learned about creating safe spaces for vulnerable storytelling and building trust with community members.</p>
+                        <a href="/blog/authentic-interviewing-techniques" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="prev">← Previous</a>
+                <span class="current">1</span>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#" class="next">Next →</a>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+            <!-- Recent Posts -->
+            <div class="sidebar-widget">
+                <h3>📚 Recent Posts</h3>
+                <div class="recent-posts">
+                    <a href="#" class="recent-post">
+                        <div class="recent-post-image">🌊</div>
+                        <div class="recent-post-content">
+                            <h4>Coastal Communities and Climate Change</h4>
+                            <div class="recent-post-date">July 12, 2025</div>
+                        </div>
+                    </a>
+                    <a href="#" class="recent-post">
+                        <div class="recent-post-image">🌱</div>
+                        <div class="recent-post-content">
+                            <h4>Sustainable Agriculture in Java</h4>
+                            <div class="recent-post-date">July 9, 2025</div>
+                        </div>
+                    </a>
+                    <a href="#" class="recent-post">
+                        <div class="recent-post-image">🏫</div>
+                        <div class="recent-post-content">
+                            <h4>Education Innovation in Rural Areas</h4>
+                            <div class="recent-post-date">July 6, 2025</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
