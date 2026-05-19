@@ -21,7 +21,7 @@ export const episodes: Episode[] = [
     duration: '9 min',
     date: 'October 15, 2025',
     excerpt:
-      'Tvisha shares how walking past construction sites near her Singapore school sparked the creation of Open Door, an AI chatbot helping migrant workers find affordable groceries, healthcare, and remittance services nearby. She explains why empathy — not technology — is the real innovation.',
+      'Tvisha shares how walking past construction sites near her Singapore school sparked the creation of Open Door, an AI chatbot helping migrant workers find affordable groceries, healthcare, and remittance services nearby. She explains why empathy - not technology - is the real innovation.',
     icon: '🤖',
     isLatest: true,
   },
@@ -34,7 +34,7 @@ export const episodes: Episode[] = [
     duration: '10 min',
     date: 'October 6, 2025',
     excerpt:
-      'While navigating her own college applications in Singapore, Saanvi realised Rohingya refugee students in Malaysia\'s Johor were making the same life-defining decisions with zero guidance. She built EmpowerED to give them the resources she took for granted — and talks about why starting imperfectly beats waiting for perfect.',
+      'While navigating her own college applications in Singapore, Saanvi realised Rohingya refugee students in Malaysia\'s Johor were making the same life-defining decisions with zero guidance. She built EmpowerED to give them the resources she took for granted - and talks about why starting imperfectly beats waiting for perfect.',
     icon: '📚',
   },
   {
@@ -46,7 +46,7 @@ export const episodes: Episode[] = [
     duration: '8 min',
     date: 'September 20, 2025',
     excerpt:
-      'The CleanFlo team explains how frustration with traditional rope nets — which kill marine life while barely denting pollution — led them to develop an air bubble barrier that collected 90 kg of trash in Indramayu in a single week without a single fish casualty. They also discuss their plan to take the technology to Jakarta\'s most polluted rivers.',
+      'The CleanFlo team explains how frustration with traditional rope nets - which kill marine life while barely denting pollution - led them to develop an air bubble barrier that collected 90 kg of trash in Indramayu in a single week without a single fish casualty. They also discuss their plan to take the technology to Jakarta\'s most polluted rivers.',
     icon: '💧',
   },
   {
@@ -58,7 +58,7 @@ export const episodes: Episode[] = [
     duration: '7 min',
     date: 'September 8, 2025',
     excerpt:
-      'The founders of Charity Connect BH explain the frustrating paradox they witnessed in Bahrain: willing volunteers on one side, under-resourced charities on the other, and almost no way for them to find each other. Their digital directory — spanning seven cause areas from poverty alleviation to animal welfare — is changing that with a deceptively simple approach.',
+      'The founders of Charity Connect BH explain the frustrating paradox they witnessed in Bahrain: willing volunteers on one side, under-resourced charities on the other, and almost no way for them to find each other. Their digital directory - spanning seven cause areas from poverty alleviation to animal welfare - is changing that with a deceptively simple approach.',
     icon: '❤️',
   },
   {
@@ -82,7 +82,7 @@ export const episodes: Episode[] = [
     duration: '8 min',
     date: 'August 10, 2025',
     excerpt:
-      'The high school students behind Project Papagarang explain why nutrition campaigns alone could not fix stunting on Papagarang Island — and how identifying the sanitation link led them to raise IDR 30 million and build toilets that are changing health outcomes for hundreds of children in Nusa Tenggara Timur.',
+      'The high school students behind Project Papagarang explain why nutrition campaigns alone could not fix stunting on Papagarang Island - and how identifying the sanitation link led them to raise IDR 30 million and build toilets that are changing health outcomes for hundreds of children in Nusa Tenggara Timur.',
     icon: '🏝️',
   },
   {
@@ -94,7 +94,7 @@ export const episodes: Episode[] = [
     duration: '10 min',
     date: 'July 28, 2025',
     excerpt:
-      'The student leaders of Belajar Bersama discuss how their high school tutoring club has helped 60+ Indonesian youth pass PKBM national equivalency exams since 2021 — and why they frame their work not as charity but as economic justice. They also reveal plans to expand from maths and science into Bahasa Indonesia and civics.',
+      'The student leaders of Belajar Bersama discuss how their high school tutoring club has helped 60+ Indonesian youth pass PKBM national equivalency exams since 2021 - and why they frame their work not as charity but as economic justice. They also reveal plans to expand from maths and science into Bahasa Indonesia and civics.',
     icon: '🎓',
   },
   {
@@ -118,7 +118,7 @@ export const episodes: Episode[] = [
     duration: '8 min',
     date: 'June 30, 2025',
     excerpt:
-      'In this deeper-dive follow-up, a CleanFlo co-founder reflects on how watching their own neighbourhood flood repeatedly became the emotional engine for the project, and explains the science behind why releasing oxygen into rivers can heal ecosystems — not just clean them. They also address the challenges of moving from prototype to policy.',
+      'In this deeper-dive follow-up, a CleanFlo co-founder reflects on how watching their own neighbourhood flood repeatedly became the emotional engine for the project, and explains the science behind why releasing oxygen into rivers can heal ecosystems - not just clean them. They also address the challenges of moving from prototype to policy.',
     icon: '🌊',
   },
   {
@@ -130,7 +130,7 @@ export const episodes: Episode[] = [
     duration: '12 min',
     date: 'June 15, 2025',
     excerpt:
-      'Subodh Chanrai shares the story of meeting Mother Teresa as a young man through his father Mithu Chanrai — and how those encounters shaped a family philosophy of "Caring Capitalism" that now underpins the MC Homeless Project. He also reflects on five decades of the Tulsi Trust\'s healthcare work across India and Nigeria, and what he hopes future generations will carry forward.',
+      'Subodh Chanrai shares the story of meeting Mother Teresa as a young man through his father Mithu Chanrai - and how those encounters shaped a family philosophy of "Caring Capitalism" that now underpins the MC Homeless Project. He also reflects on five decades of the Tulsi Trust\'s healthcare work across India and Nigeria, and what he hopes future generations will carry forward.',
     icon: '🌍',
   },
 ]

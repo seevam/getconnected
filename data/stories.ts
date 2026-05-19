@@ -35,7 +35,7 @@ export const stories: Story[] = [
     date: 'July 15, 2025',
     readTime: '6 min read',
     excerpt:
-      'Indonesian high school students discovered the critical link between sanitation and stunting, then raised IDR 30 million to build toilets on a remote island — proving that simple solutions can transform communities.',
+      'Indonesian high school students discovered the critical link between sanitation and stunting, then raised IDR 30 million to build toilets on a remote island - proving that simple solutions can transform communities.',
     heroEmoji: '🏝️',
     highlights: [
       { value: 'IDR 30M', label: 'Funds Raised' },
@@ -50,7 +50,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'East Nusa Tenggara Timur captivates visitors with its breathtaking landscapes, pristine waters, and legendary komodo dragons. But beneath this postcard-perfect surface lies a silent crisis that threatens the future of Indonesia\'s most remote communities: stunting. The statistics are sobering — in Indonesia, stunting affects between 25–30% of children under five years old, with rural areas like Nusa Tenggara Timur bearing the heaviest burden. Stunted children face lifelong consequences: difficulty learning in school, reduced earning potential as adults, and a higher likelihood of perpetuating the cycle of poverty.',
+        text: 'East Nusa Tenggara Timur captivates visitors with its breathtaking landscapes, pristine waters, and legendary komodo dragons. But beneath this postcard-perfect surface lies a silent crisis that threatens the future of Indonesia\'s most remote communities: stunting. The statistics are sobering - in Indonesia, stunting affects between 25–30% of children under five years old, with rural areas like Nusa Tenggara Timur bearing the heaviest burden. Stunted children face lifelong consequences: difficulty learning in school, reduced earning potential as adults, and a higher likelihood of perpetuating the cycle of poverty.',
       },
       {
         type: 'h2',
@@ -58,7 +58,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'While most teenagers their age were focused on exams and university applications, a group of passionate Indonesian high school students saw the stunting crisis on Papagarang Island and decided they couldn\'t stand by and watch. Rather than following conventional approaches focused primarily on nutrition, these young changemakers identified something others had overlooked: the critical link between sanitation and stunting. Project Papagarang was born from this insight — the island\'s lack of proper sanitation facilities was creating a dangerous cycle of continuous exposure to harmful bacteria that directly contributed to the stunting epidemic.',
+        text: 'While most teenagers their age were focused on exams and university applications, a group of passionate Indonesian high school students saw the stunting crisis on Papagarang Island and decided they couldn\'t stand by and watch. Rather than following conventional approaches focused primarily on nutrition, these young changemakers identified something others had overlooked: the critical link between sanitation and stunting. Project Papagarang was born from this insight - the island\'s lack of proper sanitation facilities was creating a dangerous cycle of continuous exposure to harmful bacteria that directly contributed to the stunting epidemic.',
       },
       {
         type: 'quote',
@@ -70,7 +70,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'The students didn\'t arrive with predetermined solutions — they sat down with local community leaders and residents, listened to their experiences, and worked together to identify the most practical and sustainable interventions. The approach was as brilliant as it was simple: construct low-cost, high-impact toilets for households across the island.',
+        text: 'The students didn\'t arrive with predetermined solutions - they sat down with local community leaders and residents, listened to their experiences, and worked together to identify the most practical and sustainable interventions. The approach was as brilliant as it was simple: construct low-cost, high-impact toilets for households across the island.',
       },
       {
         type: 'stat-grid',
@@ -87,7 +87,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'What makes Project Papagarang remarkable isn\'t just the toilets themselves — it\'s the way the students approached community engagement. Rather than imposing outside solutions, they built relationships first by spending time understanding local customs and needs, included families in planning to ensure toilet designs met actual usage patterns, provided ongoing support through maintenance systems and hygiene education, and celebrated local knowledge by combining traditional practices with modern sanitation principles.',
+        text: 'What makes Project Papagarang remarkable isn\'t just the toilets themselves - it\'s the way the students approached community engagement. Rather than imposing outside solutions, they built relationships first by spending time understanding local customs and needs, included families in planning to ensure toilet designs met actual usage patterns, provided ongoing support through maintenance systems and hygiene education, and celebrated local knowledge by combining traditional practices with modern sanitation principles.',
       },
       {
         type: 'h2',
@@ -95,11 +95,11 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Each toilet represents more than improved sanitation — it\'s a foundation for human dignity, health, and opportunity. When families have access to proper facilities, children especially girls can attend school more regularly, mothers spend less time caring for sick children, the entire community faces reduced healthcare costs, and economic opportunities improve as health outcomes stabilize.',
+        text: 'Each toilet represents more than improved sanitation - it\'s a foundation for human dignity, health, and opportunity. When families have access to proper facilities, children especially girls can attend school more regularly, mothers spend less time caring for sick children, the entire community faces reduced healthcare costs, and economic opportunities improve as health outcomes stabilize.',
       },
       {
         type: 'callout',
-        text: 'Transformation doesn\'t always require massive resources or complex solutions — sometimes it starts with young people who refuse to accept that suffering is inevitable.',
+        text: 'Transformation doesn\'t always require massive resources or complex solutions - sometimes it starts with young people who refuse to accept that suffering is inevitable.',
         icon: '🌅',
       },
       {
@@ -108,7 +108,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Project Papagarang represents more than a successful student initiative — it\'s a template for how young people can create lasting change when they combine passion with practical action. The students are already planning their next phase: expanding to neighboring islands, developing hygiene education curricula for schools, training local youth to become sanitation advocates, and partnering with government programs for larger-scale impact.',
+        text: 'Project Papagarang represents more than a successful student initiative - it\'s a template for how young people can create lasting change when they combine passion with practical action. The students are already planning their next phase: expanding to neighboring islands, developing hygiene education curricula for schools, training local youth to become sanitation advocates, and partnering with government programs for larger-scale impact.',
       },
     ],
     relatedSlugs: ['foodflip', 'cleanflo', 'belajar'],
@@ -125,7 +125,7 @@ export const stories: Story[] = [
     date: 'July 25, 2025',
     readTime: '6 min read',
     excerpt:
-      'What began as a Grade 10 TED Talk-style school presentation became a 7-year operation redistributing 126,000+ pieces of bread and 600 kg of fruit to 46 orphanages across Jakarta — proving that student innovation can outlast any classroom.',
+      'What began as a Grade 10 TED Talk-style school presentation became a 7-year operation redistributing 126,000+ pieces of bread and 600 kg of fruit to 46 orphanages across Jakarta - proving that student innovation can outlast any classroom.',
     heroEmoji: '🌿',
     highlights: [
       { value: '126,000+', label: 'Pieces of Bread Redistributed' },
@@ -148,7 +148,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'In 2018, a simple classroom assignment would spark a movement. FoodFlip began not in a boardroom, but in a Grade 10 English class where students were tasked with delivering TED Talk-style presentations on topics they cared about. What started as research for a school presentation became a personal awakening. Here was a problem with a clear solution: connect surplus with need. The concept was elegantly simple — partner with local vendors and bakeries to redirect unsold baked goods and fruits to orphanages across Jakarta.',
+        text: 'In 2018, a simple classroom assignment would spark a movement. FoodFlip began not in a boardroom, but in a Grade 10 English class where students were tasked with delivering TED Talk-style presentations on topics they cared about. What started as research for a school presentation became a personal awakening. Here was a problem with a clear solution: connect surplus with need. The concept was elegantly simple - partner with local vendors and bakeries to redirect unsold baked goods and fruits to orphanages across Jakarta.',
       },
       {
         type: 'quote',
@@ -160,11 +160,11 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'What began with hand-delivered donations evolved into a sophisticated network of partnerships. FoodFlip\'s approach focused on creating sustainable relationships rather than one-time charitable gestures. The organization cultivated partnerships with established Jakarta food retailers including Monami Bakery, Ranch Market, and BreadLife — each committed to ensuring their surplus reaches those who need it most rather than ending up in landfills.',
+        text: 'What began with hand-delivered donations evolved into a sophisticated network of partnerships. FoodFlip\'s approach focused on creating sustainable relationships rather than one-time charitable gestures. The organization cultivated partnerships with established Jakarta food retailers including Monami Bakery, Ranch Market, and BreadLife - each committed to ensuring their surplus reaches those who need it most rather than ending up in landfills.',
       },
       {
         type: 'callout',
-        text: 'Prior to the pandemic, FoodFlip introduced remote delivery systems using WhatsApp coordination and Gojek drivers to scale their reach — an innovation that proved critical during COVID-19 when minimal contact delivery became essential.',
+        text: 'Prior to the pandemic, FoodFlip introduced remote delivery systems using WhatsApp coordination and Gojek drivers to scale their reach - an innovation that proved critical during COVID-19 when minimal contact delivery became essential.',
         icon: '📱',
       },
       {
@@ -194,7 +194,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'This approach — "just keep going" — represents a mature understanding of social impact work. FoodFlip\'s founders recognize that lasting change comes from consistency, relationship building, and continuous improvement rather than headline-grabbing expansion. Their work demonstrates how community-based solutions can address systemic problems, providing a replicable model that other cities could adapt.',
+        text: 'This approach - "just keep going" - represents a mature understanding of social impact work. FoodFlip\'s founders recognize that lasting change comes from consistency, relationship building, and continuous improvement rather than headline-grabbing expansion. Their work demonstrates how community-based solutions can address systemic problems, providing a replicable model that other cities could adapt.',
       },
     ],
     relatedSlugs: ['mchomelessproject', 'papagarang', 'charityconnect'],
@@ -209,7 +209,7 @@ export const stories: Story[] = [
     date: 'July 20, 2025',
     readTime: '5 min read',
     excerpt:
-      'High school students invented an air bubble net system that collects 90 kg of river trash per week without harming marine life — a breakthrough that traditional rope nets could never achieve.',
+      'High school students invented an air bubble net system that collects 90 kg of river trash per week without harming marine life - a breakthrough that traditional rope nets could never achieve.',
     heroEmoji: '💧',
     highlights: [
       { value: '90 kg', label: 'Trash Collected in One Week' },
@@ -224,7 +224,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Across Indonesia\'s vast archipelago, a hidden environmental crisis flows through the arteries of the nation. Polluted, trash-filled rivers and irrigation systems have become a persistent challenge, stemming from inadequate waste management and drainage infrastructure. For decades, communities have relied on traditional trash nets to combat river pollution — but these come with devastating trade-offs: marine life becomes trapped and killed, and high Biochemical Oxygen Demand (BOD) levels persist, depleting oxygen and triggering eutrophication that devastates entire aquatic ecosystems.',
+        text: 'Across Indonesia\'s vast archipelago, a hidden environmental crisis flows through the arteries of the nation. Polluted, trash-filled rivers and irrigation systems have become a persistent challenge, stemming from inadequate waste management and drainage infrastructure. For decades, communities have relied on traditional trash nets to combat river pollution - but these come with devastating trade-offs: marine life becomes trapped and killed, and high Biochemical Oxygen Demand (BOD) levels persist, depleting oxygen and triggering eutrophication that devastates entire aquatic ecosystems.',
       },
       {
         type: 'h2',
@@ -232,7 +232,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'The story of CleanFlo began where SDG 14 (Life Below Water) wasn\'t just a poster on the wall — it was a call to action. After years of participating in river cleanups, these high school students witnessed firsthand the limitations of existing solutions and the urgent need for innovation.',
+        text: 'The story of CleanFlo began where SDG 14 (Life Below Water) wasn\'t just a poster on the wall - it was a call to action. After years of participating in river cleanups, these high school students witnessed firsthand the limitations of existing solutions and the urgent need for innovation.',
       },
       {
         type: 'callout',
@@ -245,7 +245,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'The true test came in Haurgeulis, Indramayu — a region where irrigation channels are lifelines for entire communities whose livelihoods depend on agriculture and fishing.',
+        text: 'The true test came in Haurgeulis, Indramayu - a region where irrigation channels are lifelines for entire communities whose livelihoods depend on agriculture and fishing.',
       },
       {
         type: 'stat-grid',
@@ -266,7 +266,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'One founder described the frequent flooding directly in front of their home and community — a stark reminder that environmental challenges don\'t affect everyone equally. The most vulnerable communities often bear the greatest burden of pollution and its consequences. This perspective shaped their approach: technology for social good that prioritizes communities who depend most on clean waterways for their survival and prosperity.',
+        text: 'One founder described the frequent flooding directly in front of their home and community - a stark reminder that environmental challenges don\'t affect everyone equally. The most vulnerable communities often bear the greatest burden of pollution and its consequences. This perspective shaped their approach: technology for social good that prioritizes communities who depend most on clean waterways for their survival and prosperity.',
       },
       {
         type: 'h2',
@@ -282,7 +282,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'CleanFlo represents more than a technological breakthrough — it\'s a testament to what\'s possible when young people apply scientific thinking to social challenges. Their work demonstrates innovation with empathy, community-centered solutions, systemic thinking that tackles root causes, and scalable approaches that can grow and adapt. The students behind CleanFlo prove that the next generation isn\'t just inheriting environmental problems — they\'re actively solving them.',
+        text: 'CleanFlo represents more than a technological breakthrough - it\'s a testament to what\'s possible when young people apply scientific thinking to social challenges. Their work demonstrates innovation with empathy, community-centered solutions, systemic thinking that tackles root causes, and scalable approaches that can grow and adapt. The students behind CleanFlo prove that the next generation isn\'t just inheriting environmental problems - they\'re actively solving them.',
       },
     ],
     relatedSlugs: ['papagarang', 'foodflip', 'belajar'],
@@ -299,7 +299,7 @@ export const stories: Story[] = [
     date: 'Founded 2020',
     readTime: '7 min read',
     excerpt:
-      'Mahesh Khilnani created a matched giving model where London restaurants collect £1 donations from diners — and the Chanrai family doubles every pound — channeling the hospitality industry\'s reach into a sustainable funding stream for homelessness charities.',
+      'Mahesh Khilnani created a matched giving model where London restaurants collect £1 donations from diners - and the Chanrai family doubles every pound - channeling the hospitality industry\'s reach into a sustainable funding stream for homelessness charities.',
     heroEmoji: '🍽️',
     highlights: [
       { value: '2×', label: 'Every Donation Matched' },
@@ -322,7 +322,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'To understand the MC Homeless Project, you must first understand the family behind it. The project is named after Mithu Chanrai, Mahesh\'s grandfather, whose legacy of compassion shaped the entire family\'s approach to wealth and responsibility. Through the Chanrai family\'s Tulsi Trust, established in 1975, they have spent decades supporting Mother Teresa\'s foundations in India — feeding 150–200 people twice weekly in Mumbai, providing healthcare to marginalized communities, and establishing TCF Nigeria in 1992.',
+        text: 'To understand the MC Homeless Project, you must first understand the family behind it. The project is named after Mithu Chanrai, Mahesh\'s grandfather, whose legacy of compassion shaped the entire family\'s approach to wealth and responsibility. Through the Chanrai family\'s Tulsi Trust, established in 1975, they have spent decades supporting Mother Teresa\'s foundations in India - feeding 150–200 people twice weekly in Mumbai, providing healthcare to marginalized communities, and establishing TCF Nigeria in 1992.',
       },
       {
         type: 'quote',
@@ -334,7 +334,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'The MC Homeless Project\'s model is elegant in its simplicity and revolutionary in its impact. Rather than creating an entirely new fundraising infrastructure, Mahesh recognized that high-end hospitality venues already have everything needed to raise significant funds: affluent customers, trusted brands, efficient payment systems, and regular foot traffic. What these venues lacked was a simple, turnkey system for channeling customer generosity toward homelessness charities — with one game-changing addition: the Chanrai family matches every donation raised.',
+        text: 'The MC Homeless Project\'s model is elegant in its simplicity and revolutionary in its impact. Rather than creating an entirely new fundraising infrastructure, Mahesh recognized that high-end hospitality venues already have everything needed to raise significant funds: affluent customers, trusted brands, efficient payment systems, and regular foot traffic. What these venues lacked was a simple, turnkey system for channeling customer generosity toward homelessness charities - with one game-changing addition: the Chanrai family matches every donation raised.',
       },
       {
         type: 'list',
@@ -342,7 +342,7 @@ export const stories: Story[] = [
           'Restaurant partners collect donations via simple prompts on bills or specific menu items',
           'Diners are invited to add £1 to their bill or donate a percentage on particular items',
           'Every pound raised is matched by the Chanrai family, instantly doubling the impact',
-          'All funds go directly from the restaurant to the designated homelessness charity — no admin costs',
+          'All funds go directly from the restaurant to the designated homelessness charity - no admin costs',
           'Donations are credited to the hospitality venue, celebrating the restaurant\'s commitment to impact',
         ],
       },
@@ -352,7 +352,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'The first test of this model came through a partnership with Dinings SW3, a prestigious Japanese restaurant in Knightsbridge — one of London\'s most affluent neighborhoods. The charity selected for this inaugural collaboration was YMCA, an organization with extensive experience supporting young people experiencing homelessness and housing instability, providing not just emergency shelter but comprehensive support including life skills training, mental health services, and pathways to stable housing.',
+        text: 'The first test of this model came through a partnership with Dinings SW3, a prestigious Japanese restaurant in Knightsbridge - one of London\'s most affluent neighborhoods. The charity selected for this inaugural collaboration was YMCA, an organization with extensive experience supporting young people experiencing homelessness and housing instability, providing not just emergency shelter but comprehensive support including life skills training, mental health services, and pathways to stable housing.',
       },
       {
         type: 'quote',
@@ -364,11 +364,11 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'The mathematics of scale are compelling: 50 restaurants collecting £1 per customer per day, matched by the family, generates £10,000 daily. At 500 restaurants the figure reaches £100,000 daily. London has thousands of restaurants, and the model is simple enough to replicate in any city: New York, Paris, Dubai, Singapore, or Mumbai. The key ingredients are universal — restaurants with giving customers, homelessness charities providing essential services, and a coordinating body managing partnerships.',
+        text: 'The mathematics of scale are compelling: 50 restaurants collecting £1 per customer per day, matched by the family, generates £10,000 daily. At 500 restaurants the figure reaches £100,000 daily. London has thousands of restaurants, and the model is simple enough to replicate in any city: New York, Paris, Dubai, Singapore, or Mumbai. The key ingredients are universal - restaurants with giving customers, homelessness charities providing essential services, and a coordinating body managing partnerships.',
       },
       {
         type: 'callout',
-        text: 'Working towards ending homelessness in the UK — one restaurant meal, one matched donation, one changed life at a time.',
+        text: 'Working towards ending homelessness in the UK - one restaurant meal, one matched donation, one changed life at a time.',
         icon: '🌍',
       },
     ],
@@ -386,7 +386,7 @@ export const stories: Story[] = [
     date: 'Founded 2024',
     readTime: '6 min read',
     excerpt:
-      'Charity Connect BH solves the paradox of modern charity in Bahrain: countless people want to give, and countless causes need support, yet the two sides struggle to find each other. The platform\'s tagline says it all — "Charity made simple!"',
+      'Charity Connect BH solves the paradox of modern charity in Bahrain: countless people want to give, and countless causes need support, yet the two sides struggle to find each other. The platform\'s tagline says it all - "Charity made simple!"',
     heroEmoji: '❤️',
     highlights: [
       { value: '7', label: 'Cause Areas Covered' },
@@ -401,7 +401,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'In Bahrain, a nation with deep roots in charitable giving and community support, an interesting paradox exists. On one side, countless individuals want to give back — they have time, skills, resources, and genuine desire to make a difference. On the other side, charitable organizations desperately need volunteers, donations, and support to sustain their vital work serving orphans, animals, migrant workers, women in need, and countless other vulnerable populations. Yet despite this perfect alignment of need and willingness, the two sides often struggle to find each other.',
+        text: 'In Bahrain, a nation with deep roots in charitable giving and community support, an interesting paradox exists. On one side, countless individuals want to give back - they have time, skills, resources, and genuine desire to make a difference. On the other side, charitable organizations desperately need volunteers, donations, and support to sustain their vital work serving orphans, animals, migrant workers, women in need, and countless other vulnerable populations. Yet despite this perfect alignment of need and willingness, the two sides often struggle to find each other.',
       },
       {
         type: 'h2',
@@ -409,7 +409,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Enter Charity Connect BH, a digital platform built on a deceptively simple premise: charity shouldn\'t be complicated. With the tagline "Charity made simple!", the platform tackles the connection crisis head-on by creating a centralized hub where compassion meets action. Rather than reinventing charitable work itself, Charity Connect BH recognized that the real innovation needed was in reducing friction — making it as easy as browsing a well-organized website to find the right cause.',
+        text: 'Enter Charity Connect BH, a digital platform built on a deceptively simple premise: charity shouldn\'t be complicated. With the tagline "Charity made simple!", the platform tackles the connection crisis head-on by creating a centralized hub where compassion meets action. Rather than reinventing charitable work itself, Charity Connect BH recognized that the real innovation needed was in reducing friction - making it as easy as browsing a well-organized website to find the right cause.',
       },
       {
         type: 'quote',
@@ -426,11 +426,11 @@ export const stories: Story[] = [
       {
         type: 'list',
         items: [
-          'Al Sanabel Orphans Care Society — comprehensive support for orphans in Bahrain',
-          'Down Syndrome Care Center — empowering individuals and families with specialized care',
-          'Alia for Early Intervention — promoting lifelong access for those with behavioral and communication difficulties',
-          'Bahrain Strays — community-engaged dog rescue, vetting, and rehoming',
-          'Bahrain Animal Rescue Centre (BARC) — the largest no-kill shelter in the Kingdom',
+          'Al Sanabel Orphans Care Society - comprehensive support for orphans in Bahrain',
+          'Down Syndrome Care Center - empowering individuals and families with specialized care',
+          'Alia for Early Intervention - promoting lifelong access for those with behavioral and communication difficulties',
+          'Bahrain Strays - community-engaged dog rescue, vetting, and rehoming',
+          'Bahrain Animal Rescue Centre (BARC) - the largest no-kill shelter in the Kingdom',
         ],
       },
       {
@@ -439,7 +439,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'What makes Charity Connect BH particularly valuable isn\'t just aggregation — it\'s thoughtful curation. The platform features verified, legitimate organizations doing meaningful work across diverse causes. This vetting process provides something invaluable to potential volunteers and donors: trust. By leveling the playing field, smaller grassroots initiatives gain the same visibility as established charities.',
+        text: 'What makes Charity Connect BH particularly valuable isn\'t just aggregation - it\'s thoughtful curation. The platform features verified, legitimate organizations doing meaningful work across diverse causes. This vetting process provides something invaluable to potential volunteers and donors: trust. By leveling the playing field, smaller grassroots initiatives gain the same visibility as established charities.',
       },
       {
         type: 'h2',
@@ -451,7 +451,7 @@ export const stories: Story[] = [
       },
       {
         type: 'callout',
-        text: 'The best solutions don\'t add complexity — they remove it. By making charity simple, we make it accessible. By making it accessible, we make it powerful.',
+        text: 'The best solutions don\'t add complexity - they remove it. By making charity simple, we make it accessible. By making it accessible, we make it powerful.',
         icon: '💡',
       },
       {
@@ -460,7 +460,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Charity Connect BH reminds us that technology\'s highest purpose isn\'t complexity or novelty — it\'s serving fundamental human needs with elegance and empathy. The platform demonstrates that digital solutions don\'t need to be complicated to be effective, that curation provides value in an age of information overload, and that technology works best when it facilitates human connection. In a world where we often reach for complex solutions to complex problems, Charity Connect BH proves that sometimes the most revolutionary act is making something beautifully, powerfully simple.',
+        text: 'Charity Connect BH reminds us that technology\'s highest purpose isn\'t complexity or novelty - it\'s serving fundamental human needs with elegance and empathy. The platform demonstrates that digital solutions don\'t need to be complicated to be effective, that curation provides value in an age of information overload, and that technology works best when it facilitates human connection. In a world where we often reach for complex solutions to complex problems, Charity Connect BH proves that sometimes the most revolutionary act is making something beautifully, powerfully simple.',
       },
     ],
     relatedSlugs: ['mchomelessproject', 'opendoor', 'empowered'],
@@ -492,7 +492,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'In Malaysia\'s southern region of Johor, thousands of refugee students face a paradox that defines modern displacement: they can access basic education, but the pathway to higher education remains almost impossibly distant. For many in the Rohingya community, there exists a rare school that offers hope — a bridge to tertiary education in the Philippines — but the resources to actually cross that bridge are virtually nonexistent. No college counselors. No alumni networks. No comprehensive guides about different fields of study. No interview preparation. Just hope, determination, and the overwhelming uncertainty that comes with navigating unfamiliar systems while carrying the weight of displacement.',
+        text: 'In Malaysia\'s southern region of Johor, thousands of refugee students face a paradox that defines modern displacement: they can access basic education, but the pathway to higher education remains almost impossibly distant. For many in the Rohingya community, there exists a rare school that offers hope - a bridge to tertiary education in the Philippines - but the resources to actually cross that bridge are virtually nonexistent. No college counselors. No alumni networks. No comprehensive guides about different fields of study. No interview preparation. Just hope, determination, and the overwhelming uncertainty that comes with navigating unfamiliar systems while carrying the weight of displacement.',
       },
       {
         type: 'h2',
@@ -500,7 +500,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Saanvi\'s journey to founding EmpowerED began with a moment of realization that changed everything. As she navigated her own college application process — researching universities, exploring different academic paths, preparing for interviews — she was surrounded by resources: shared experiences from older students, guidance counselors, and access to information about every possible pathway.',
+        text: 'Saanvi\'s journey to founding EmpowerED began with a moment of realization that changed everything. As she navigated her own college application process - researching universities, exploring different academic paths, preparing for interviews - she was surrounded by resources: shared experiences from older students, guidance counselors, and access to information about every possible pathway.',
       },
       {
         type: 'quote',
@@ -513,11 +513,11 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'EmpowerED\'s approach is as practical as it is transformative. Rather than trying to solve every challenge refugee students face, Saanvi focused on what she knew could create immediate impact: democratizing access to information and skills. The platform centers on two interconnected pillars: pathway discovery and college navigation, providing comprehensive resources about different fields of study and career pathways; and essential soft skills development — interview preparation, professional communication, application strategies, and confidence building.',
+        text: 'EmpowerED\'s approach is as practical as it is transformative. Rather than trying to solve every challenge refugee students face, Saanvi focused on what she knew could create immediate impact: democratizing access to information and skills. The platform centers on two interconnected pillars: pathway discovery and college navigation, providing comprehensive resources about different fields of study and career pathways; and essential soft skills development - interview preparation, professional communication, application strategies, and confidence building.',
       },
       {
         type: 'callout',
-        text: 'What makes EmpowerED particularly effective is Saanvi\'s position as a fellow student. She\'s not speaking from the distant perspective of an adult — she\'s navigating the same challenges in real-time, creating a unique credibility and relatability that traditional educational programs often lack.',
+        text: 'What makes EmpowerED particularly effective is Saanvi\'s position as a fellow student. She\'s not speaking from the distant perspective of an adult - she\'s navigating the same challenges in real-time, creating a unique credibility and relatability that traditional educational programs often lack.',
         icon: '🌟',
       },
       {
@@ -531,7 +531,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'This philosophy of action over endless planning has shaped EmpowerED\'s development. Rather than waiting for perfect conditions or comprehensive funding, Saanvi began building immediately — creating resources, establishing connections, and preparing to serve students who couldn\'t afford to wait. The approach acknowledges a crucial truth: for students navigating college applications right now, "someday" isn\'t good enough. Each year of delay means another cohort of students making life-defining decisions without adequate support.',
+        text: 'This philosophy of action over endless planning has shaped EmpowerED\'s development. Rather than waiting for perfect conditions or comprehensive funding, Saanvi began building immediately - creating resources, establishing connections, and preparing to serve students who couldn\'t afford to wait. The approach acknowledges a crucial truth: for students navigating college applications right now, "someday" isn\'t good enough. Each year of delay means another cohort of students making life-defining decisions without adequate support.',
       },
       {
         type: 'h2',
@@ -543,7 +543,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'EmpowerED represents more than a platform or an initiative — it\'s a declaration that educational opportunity shouldn\'t depend on the circumstances of your birth. Refugee students possess the same potential, dreams, and determination as students anywhere in the world. The only difference is access to information and support. And that difference, as Saanvi demonstrates, is entirely within our power to address.',
+        text: 'EmpowerED represents more than a platform or an initiative - it\'s a declaration that educational opportunity shouldn\'t depend on the circumstances of your birth. Refugee students possess the same potential, dreams, and determination as students anywhere in the world. The only difference is access to information and support. And that difference, as Saanvi demonstrates, is entirely within our power to address.',
       },
     ],
     relatedSlugs: ['belajar', 'opendoor', 'charityconnect'],
@@ -560,7 +560,7 @@ export const stories: Story[] = [
     date: 'Founded 2021',
     readTime: '6 min read',
     excerpt:
-      'High school students teaching other youth to pass Indonesia\'s national equivalency exams (PKBM Paket A, B, and C) — because Belajar Bersama believes education isn\'t just about knowledge, it\'s about opening economic opportunity and breaking cycles of poverty.',
+      'High school students teaching other youth to pass Indonesia\'s national equivalency exams (PKBM Paket A, B, and C) - because Belajar Bersama believes education isn\'t just about knowledge, it\'s about opening economic opportunity and breaking cycles of poverty.',
     heroEmoji: '🎓',
     highlights: [
       { value: '60+', label: 'Students Helped to Pass Exams' },
@@ -575,7 +575,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Education is enshrined as a fundamental right in Indonesia\'s constitution — celebrated as the pathway to success and the great equalizer. Yet behind these lofty ideals lies a sobering reality: millions of Indonesian children and teenagers cannot access formal education, creating a crisis that threatens not just individual futures but the nation\'s development itself. For young people who must work to support their families, who live in areas without schools, or who face other circumstances that force them out of the formal education system, this is the difference between opportunity and a lifetime of limited options.',
+        text: 'Education is enshrined as a fundamental right in Indonesia\'s constitution - celebrated as the pathway to success and the great equalizer. Yet behind these lofty ideals lies a sobering reality: millions of Indonesian children and teenagers cannot access formal education, creating a crisis that threatens not just individual futures but the nation\'s development itself. For young people who must work to support their families, who live in areas without schools, or who face other circumstances that force them out of the formal education system, this is the difference between opportunity and a lifetime of limited options.',
       },
       {
         type: 'h2',
@@ -583,11 +583,11 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Founded in 2021, Belajar Bersama emerged from a simple but powerful recognition: students who can\'t access formal education still deserve the chance to earn their credentials and build their futures. What makes this initiative remarkable isn\'t just its mission — it\'s who\'s leading it. High school students teaching other youth. Peers mentoring peers. Teenagers dedicating their time to ensure others don\'t get left behind.',
+        text: 'Founded in 2021, Belajar Bersama emerged from a simple but powerful recognition: students who can\'t access formal education still deserve the chance to earn their credentials and build their futures. What makes this initiative remarkable isn\'t just its mission - it\'s who\'s leading it. High school students teaching other youth. Peers mentoring peers. Teenagers dedicating their time to ensure others don\'t get left behind.',
       },
       {
         type: 'callout',
-        text: 'Belajar Bersama partnered strategically with Nara Kreatif, an organization dedicated to non-formal education. Nara Kreatif provides curriculum framework and exam registration; Belajar Bersama provides weekly tutoring, mock exams, emotional support, and peer mentorship — together creating a comprehensive support system.',
+        text: 'Belajar Bersama partnered strategically with Nara Kreatif, an organization dedicated to non-formal education. Nara Kreatif provides curriculum framework and exam registration; Belajar Bersama provides weekly tutoring, mock exams, emotional support, and peer mentorship - together creating a comprehensive support system.',
         icon: '🤝',
       },
       {
@@ -596,7 +596,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'At the heart of Belajar Bersama\'s work is Indonesia\'s national equivalency exam system — the PKBM (Pusat Kegiatan Belajar Masyarakat). For students who can\'t access formal schooling, this system offers an alternative pathway to educational credentials through three levels: Paket A (elementary school equivalency), Paket B (middle school equivalency), and Paket C (high school equivalency — the same qualifications as formal schooling graduates, opening the same doors to employment and higher education).',
+        text: 'At the heart of Belajar Bersama\'s work is Indonesia\'s national equivalency exam system - the PKBM (Pusat Kegiatan Belajar Masyarakat). For students who can\'t access formal schooling, this system offers an alternative pathway to educational credentials through three levels: Paket A (elementary school equivalency), Paket B (middle school equivalency), and Paket C (high school equivalency - the same qualifications as formal schooling graduates, opening the same doors to employment and higher education).',
       },
       {
         type: 'stat-grid',
@@ -617,7 +617,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'This understanding — that education is fundamentally about economic opportunity rather than just academic achievement — shapes everything Belajar Bersama does. They recognize that for their students, passing these exams isn\'t about intellectual satisfaction. It\'s about better jobs, higher wages, breaking cycles of poverty, and the dignity to shape one\'s own future rather than being limited by circumstance.',
+        text: 'This understanding - that education is fundamentally about economic opportunity rather than just academic achievement - shapes everything Belajar Bersama does. They recognize that for their students, passing these exams isn\'t about intellectual satisfaction. It\'s about better jobs, higher wages, breaking cycles of poverty, and the dignity to shape one\'s own future rather than being limited by circumstance.',
       },
       {
         type: 'h2',
@@ -629,7 +629,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'In a world that often makes problems seem impossibly large and solutions impossibly complex, Belajar Bersama reminds us that transformation can begin with students teaching students, peers supporting peers, and communities refusing to leave anyone behind. They are now planning to expand tutoring to additional subjects — Bahasa Indonesia and Civics — as they deepen their partnership with Nara Kreatif.',
+        text: 'In a world that often makes problems seem impossibly large and solutions impossibly complex, Belajar Bersama reminds us that transformation can begin with students teaching students, peers supporting peers, and communities refusing to leave anyone behind. They are now planning to expand tutoring to additional subjects - Bahasa Indonesia and Civics - as they deepen their partnership with Nara Kreatif.',
       },
     ],
     relatedSlugs: ['empowered', 'papagarang', 'cleanflo'],
@@ -646,7 +646,7 @@ export const stories: Story[] = [
     date: 'October 15, 2025',
     readTime: '6 min read',
     excerpt:
-      'Tvisha Jhamb built an AI-powered chatbot so that migrant workers in Singapore — who know their neighborhood far less than the people who built it — can instantly find affordable groceries, healthcare, and remittance services nearby.',
+      'Tvisha Jhamb built an AI-powered chatbot so that migrant workers in Singapore - who know their neighborhood far less than the people who built it - can instantly find affordable groceries, healthcare, and remittance services nearby.',
     heroEmoji: '🤖',
     highlights: [
       { value: '2025', label: 'Year Launched' },
@@ -661,7 +661,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Every day, millions of people pass by construction sites, cleaning crews, and delivery workers without a second thought. These migrant workers are the invisible backbone of modern Singapore — constructing skyscrapers, maintaining infrastructure, keeping businesses running. Yet for all their essential contributions, they remain largely unseen by the very society they help build. For Tvisha Jhamb, a student in Singapore, these workers were impossible to ignore. Walking past her school every day, she witnessed their reality firsthand: workers sweating under the harsh sun, carrying heavy loads, pushing through physically demanding days.',
+        text: 'Every day, millions of people pass by construction sites, cleaning crews, and delivery workers without a second thought. These migrant workers are the invisible backbone of modern Singapore - constructing skyscrapers, maintaining infrastructure, keeping businesses running. Yet for all their essential contributions, they remain largely unseen by the very society they help build. For Tvisha Jhamb, a student in Singapore, these workers were impossible to ignore. Walking past her school every day, she witnessed their reality firsthand: workers sweating under the harsh sun, carrying heavy loads, pushing through physically demanding days.',
       },
       {
         type: 'h2',
@@ -673,7 +673,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: 'I think seeing their struggles and looking at so many migrant workers near my school sweating and doing so much work — I wanted to do something for them. After researching a lot, I found that one of the most significant concerns was finding accessible resources, and hence I tried solving for that problem.',
+        text: 'I think seeing their struggles and looking at so many migrant workers near my school sweating and doing so much work - I wanted to do something for them. After researching a lot, I found that one of the most significant concerns was finding accessible resources, and hence I tried solving for that problem.',
         attribution: 'Tvisha Jhamb, Founder of Open Door',
       },
       {
@@ -682,11 +682,11 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Tvisha\'s solution emerged from a crucial insight: while migrant workers face numerous challenges, most carry smartphones — the one tool that could potentially bridge the information gap. Enter Open Door: an AI-powered chatbot designed specifically for migrant workers in Singapore. Rather than creating another app that requires downloading and registration, Tvisha built a conversational assistant that works through familiar messaging platforms.',
+        text: 'Tvisha\'s solution emerged from a crucial insight: while migrant workers face numerous challenges, most carry smartphones - the one tool that could potentially bridge the information gap. Enter Open Door: an AI-powered chatbot designed specifically for migrant workers in Singapore. Rather than creating another app that requires downloading and registration, Tvisha built a conversational assistant that works through familiar messaging platforms.',
       },
       {
         type: 'callout',
-        text: 'A worker can simply ask "Where can I find cheap groceries near Jurong?" and receive immediate, relevant recommendations. The AI understands context, remembers conversations, and provides increasingly relevant suggestions — available 24/7 in multiple languages.',
+        text: 'A worker can simply ask "Where can I find cheap groceries near Jurong?" and receive immediate, relevant recommendations. The AI understands context, remembers conversations, and provides increasingly relevant suggestions - available 24/7 in multiple languages.',
         icon: '🤖',
       },
       {
@@ -695,7 +695,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'What distinguishes Open Door from typical technology solutions is its foundation in genuine empathy rather than assumptions about what workers need. Tvisha didn\'t build what she thought would be useful — she researched, observed, and designed around actual challenges migrant workers expressed. The design choices reflect this: simplicity first, language that treats workers as valued community members, minimal data collection, offline capability for areas with poor connectivity, and cultural sensitivity around dietary restrictions and remittance patterns.',
+        text: 'What distinguishes Open Door from typical technology solutions is its foundation in genuine empathy rather than assumptions about what workers need. Tvisha didn\'t build what she thought would be useful - she researched, observed, and designed around actual challenges migrant workers expressed. The design choices reflect this: simplicity first, language that treats workers as valued community members, minimal data collection, offline capability for areas with poor connectivity, and cultural sensitivity around dietary restrictions and remittance patterns.',
       },
       {
         type: 'quote',
@@ -713,7 +713,7 @@ export const stories: Story[] = [
       },
       {
         type: 'paragraph',
-        text: 'Open Door challenges us to reconsider who we see as part of our communities. Migrant workers aren\'t temporary visitors or invisible labor — they\'re community members with the same fundamental needs who deserve the same access to resources that we take for granted. Open Door is live and accessible at tvishajhamb.github.io/MigHelpBot/, helping migrant workers across Singapore find affordable resources right now.',
+        text: 'Open Door challenges us to reconsider who we see as part of our communities. Migrant workers aren\'t temporary visitors or invisible labor - they\'re community members with the same fundamental needs who deserve the same access to resources that we take for granted. Open Door is live and accessible at tvishajhamb.github.io/MigHelpBot/, helping migrant workers across Singapore find affordable resources right now.',
       },
     ],
     relatedSlugs: ['charityconnect', 'empowered', 'mchomelessproject'],

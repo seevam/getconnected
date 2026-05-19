@@ -14,7 +14,7 @@ const platforms = [
     icon: "📖",
     name: "Stories",
     description:
-      "Quick-read narratives (5 minutes max) — your daily dose of inspiration. Real stories from real people making real change.",
+      "Quick-read narratives (5 minutes max) - your daily dose of inspiration. Real stories from real people making real change.",
     stats: [
       { v: "24", l: "Published" },
       { v: "5 min", l: "Avg Read" },
@@ -104,7 +104,7 @@ export default function HomePage() {
 
           <p className="max-w-2xl mx-auto text-lg text-zinc-400 leading-relaxed mb-10">
             We believe every voice matters. Every story has the power to bridge
-            divides, inspire change, and remind us of our shared humanity —
+            divides, inspire change, and remind us of our shared humanity -
             across Indonesia&apos;s diverse communities and beyond.
           </p>
 
@@ -297,7 +297,7 @@ export default function HomePage() {
           </h2>
           <p className="text-zinc-400 leading-relaxed mb-8">
             Whether you&apos;re leading change in your community, overcoming
-            challenges, or simply living an inspiring life — your story has the
+            challenges, or simply living an inspiring life - your story has the
             power to connect, inspire, and create positive change.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -317,7 +317,7 @@ export default function HomePage() {
           &ldquo;Human connection is the heart of change.&rdquo;
         </p>
         <p className="text-sm text-cyan-400 font-semibold tracking-wide uppercase">
-          — ConnectED Foundation Principle
+          - ConnectED Foundation Principle
         </p>
       </section>
     </>

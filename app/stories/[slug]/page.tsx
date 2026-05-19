@@ -129,7 +129,7 @@ export default async function StoryPage({ params }: Props) {
                   <p>{block.text}</p>
                   {block.attribution && (
                     <cite className="text-sm text-zinc-500 not-italic mt-2 block">
-                      — {block.attribution}
+                      - {block.attribution}
                     </cite>
                   )}
                 </blockquote>
