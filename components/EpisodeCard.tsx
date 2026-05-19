@@ -1,3 +1,6 @@
+import { Play } from "lucide-react"
+import { Icon } from "@/components/Icon"
+import type { IconName } from "@/components/Icon"
 import type { Episode } from "@/data/episodes"
 
 const topicColors: Record<string, string> = {
@@ -21,23 +24,36 @@ const iconBgs: Record<string, string> = {
   community:           "from-amber-900 to-amber-950",
 }
 
+const iconColors: Record<string, string> = {
+  "social-innovation": "text-cyan-400/70",
+  education:           "text-violet-400/70",
+  environment:         "text-emerald-400/70",
+  community:           "text-amber-400/70",
+}
+
 interface Props {
   episode: Episode
 }
 
 export default function EpisodeCard({ episode }: Props) {
-  const badge = topicColors[episode.topic] ?? topicColors["social-innovation"]
-  const label = topicLabels[episode.topic] ?? "General"
-  const bg = iconBgs[episode.topic] ?? iconBgs["social-innovation"]
+  const badge     = topicColors[episode.topic]  ?? topicColors["social-innovation"]
+  const label     = topicLabels[episode.topic]  ?? "General"
+  const bg        = iconBgs[episode.topic]      ?? iconBgs["social-innovation"]
+  const iconColor = iconColors[episode.topic]   ?? iconColors["social-innovation"]
 
   return (
     <div className="group flex gap-4 bg-zinc-900 border border-zinc-800 rounded-2xl p-4 hover:border-zinc-600 transition-all duration-300 hover:shadow-xl hover:shadow-black/30">
       {/* Cover art */}
       <div
-        className={`w-16 h-16 rounded-xl bg-gradient-to-br ${bg} flex items-center justify-center text-2xl shrink-0 relative overflow-hidden group-hover:scale-105 transition-transform`}
+        className={`w-16 h-16 rounded-xl bg-gradient-to-br ${bg} flex items-center justify-center shrink-0 relative overflow-hidden group-hover:scale-105 transition-transform`}
       >
-        {episode.icon}
-        <span className="absolute bottom-0.5 right-1 text-[9px] font-bold text-white/50">
+        <Icon
+          name={episode.icon as IconName}
+          size={28}
+          className={iconColor}
+          strokeWidth={1.25}
+        />
+        <span className="absolute bottom-0.5 right-1 text-[9px] font-bold text-white/40">
           E{episode.id}
         </span>
       </div>
@@ -60,7 +76,7 @@ export default function EpisodeCard({ episode }: Props) {
       {/* Play */}
       <div className="flex flex-col items-center gap-1.5 shrink-0">
         <button className="w-10 h-10 rounded-full bg-cyan-400 hover:bg-cyan-300 flex items-center justify-center text-[#09090b] transition-colors group-hover:scale-105 duration-200">
-          ▶
+          <Play size={14} fill="currentColor" strokeWidth={0} />
         </button>
         <span className="text-[10px] text-zinc-600 whitespace-nowrap">{episode.duration}</span>
       </div>

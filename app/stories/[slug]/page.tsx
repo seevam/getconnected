@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { MapPin, Clock, Share2, Info } from "lucide-react"
 import { notFound } from "next/navigation"
+import { Icon } from "@/components/Icon"
+import type { IconName } from "@/components/Icon"
 import { getStory, stories } from "@/data/stories"
 import StoryCard from "@/components/StoryCard"
 
@@ -44,13 +47,25 @@ const heroBg: Record<string, string> = {
   teal:    "from-teal-900/50 via-zinc-900 to-[#09090b]",
 }
 
+const heroIconColor: Record<string, string> = {
+  cyan:    "text-cyan-400/60",
+  emerald: "text-emerald-400/60",
+  sky:     "text-sky-400/60",
+  orange:  "text-orange-400/60",
+  violet:  "text-violet-400/60",
+  amber:   "text-amber-400/60",
+  rose:    "text-rose-400/60",
+  teal:    "text-teal-400/60",
+}
+
 export default async function StoryPage({ params }: Props) {
   const { slug } = await params
   const story = getStory(slug)
   if (!story) notFound()
 
-  const badgeClass = categoryBadge[story.categoryColor] ?? categoryBadge.cyan
-  const bgClass = heroBg[story.categoryColor] ?? heroBg.cyan
+  const badgeClass     = categoryBadge[story.categoryColor] ?? categoryBadge.cyan
+  const bgClass        = heroBg[story.categoryColor] ?? heroBg.cyan
+  const iconColorClass = heroIconColor[story.categoryColor] ?? heroIconColor.cyan
   const related = story.relatedSlugs
     .map((s) => stories.find((st) => st.slug === s))
     .filter(Boolean) as typeof stories
@@ -63,7 +78,6 @@ export default async function StoryPage({ params }: Props) {
       {/* Hero */}
       <section className={`pt-28 pb-16 bg-gradient-to-b ${bgClass} relative overflow-hidden`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          {/* Back */}
           <Link
             href="/blog"
             className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-300 mb-8 transition-colors"
@@ -71,17 +85,21 @@ export default async function StoryPage({ params }: Props) {
             ← Back to Stories
           </Link>
 
-          {/* Meta row */}
           <div className="flex items-center gap-3 mb-6 flex-wrap">
             <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${badgeClass}`}>
               {story.category}
             </span>
-            <span className="text-xs text-zinc-500">📍 {story.location}</span>
-            <span className="text-xs text-zinc-500">🕒 {story.readTime}</span>
+            <span className="text-xs text-zinc-500 flex items-center gap-1">
+              <MapPin size={11} strokeWidth={1.75} />
+              {story.location}
+            </span>
+            <span className="text-xs text-zinc-500 flex items-center gap-1">
+              <Clock size={11} strokeWidth={1.75} />
+              {story.readTime}
+            </span>
             <span className="text-xs text-zinc-500">{story.date}</span>
           </div>
 
-          {/* Title */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4">
             {story.title}
           </h1>
@@ -89,9 +107,13 @@ export default async function StoryPage({ params }: Props) {
             <p className="text-lg text-zinc-400 leading-relaxed mb-8">{story.subtitle}</p>
           )}
 
-          {/* Hero visual */}
           <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center mt-8">
-            <span className="text-8xl sm:text-9xl">{story.heroEmoji}</span>
+            <Icon
+              name={story.heroIcon as IconName}
+              size={100}
+              className={iconColorClass}
+              strokeWidth={1}
+            />
           </div>
         </div>
       </section>
@@ -129,7 +151,7 @@ export default async function StoryPage({ params }: Props) {
                   <p>{block.text}</p>
                   {block.attribution && (
                     <cite className="text-sm text-zinc-500 not-italic mt-2 block">
-                      - {block.attribution}
+                      {block.attribution}
                     </cite>
                   )}
                 </blockquote>
@@ -155,7 +177,7 @@ export default async function StoryPage({ params }: Props) {
                 <ul key={i} className="space-y-2 my-4 not-prose">
                   {block.items.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-[#a1a1aa] text-[1.05rem] leading-[1.8]">
-                      <span className="text-cyan-400 mt-1 shrink-0">✦</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -169,7 +191,7 @@ export default async function StoryPage({ params }: Props) {
                   className="my-6 p-5 bg-zinc-800/50 border border-zinc-700 rounded-xl not-prose"
                 >
                   <div className="flex gap-3">
-                    {block.icon && <span className="text-2xl shrink-0">{block.icon}</span>}
+                    <Info size={18} className="text-cyan-400 shrink-0 mt-0.5" strokeWidth={1.75} />
                     <p className="text-sm text-zinc-300 leading-relaxed">{block.text}</p>
                   </div>
                 </div>
@@ -189,8 +211,9 @@ export default async function StoryPage({ params }: Props) {
             <p className="text-xs text-zinc-500">Share it and help amplify these voices.</p>
           </div>
           <div className="flex gap-3">
-            <button className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-sm text-zinc-300 font-medium transition-colors">
-              📤 Share
+            <button className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-sm text-zinc-300 font-medium transition-colors inline-flex items-center gap-2">
+              <Share2 size={13} strokeWidth={2} />
+              Share
             </button>
             <Link
               href="/blog"
