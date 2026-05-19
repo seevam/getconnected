@@ -220,24 +220,19 @@ export default function PodcastPage() {
             {/* Hosts */}
             <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
               <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">
-                🎙️ Your Hosts
+                🎙️ Your Host
               </h3>
-              {[
-                { name: "Ari Rachmat", role: "Co-founder, ConnectED" },
-                { name: "Shivam Patel", role: "Co-founder, ConnectED" },
-              ].map((h) => (
-                <div key={h.name} className="flex items-center gap-3 mb-3 last:mb-0">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center text-sm font-bold text-white shrink-0">
-                    {h.name[0]}
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-zinc-200">{h.name}</div>
-                    <div className="text-xs text-zinc-500">{h.role}</div>
-                  </div>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center text-sm font-bold text-white shrink-0">
+                  A
                 </div>
-              ))}
+                <div>
+                  <div className="text-sm font-semibold text-zinc-200">Ari Rachmat</div>
+                  <div className="text-xs text-zinc-500">Founder, ConnectED</div>
+                </div>
+              </div>
               <p className="text-xs text-zinc-500 leading-relaxed mt-3">
-                Ari and Shivam started ConnectED from Jakarta in 2025 with a
+                Ari started ConnectED from Jakarta in 2025 with a
                 simple belief: every community deserves to have its stories heard.
               </p>
             </div>

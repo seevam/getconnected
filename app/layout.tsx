@@ -9,7 +9,7 @@ const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono"
 
 export const metadata: Metadata = {
   title: {
-    default: "ConnectED — Stories That Connect Us",
+    default: "ConnectED - Stories That Connect Us",
     template: "%s | ConnectED",
   },
   description:

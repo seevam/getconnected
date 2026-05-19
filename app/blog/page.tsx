@@ -5,7 +5,7 @@ import type { CategoryColor } from "@/data/stories"
 
 export const metadata: Metadata = {
   title: "Stories",
-  description: "All stories from ConnectED — real people, real change.",
+  description: "All stories from ConnectED - real people, real change.",
 }
 
 const allCategories: { label: string; value: string }[] = [
@@ -53,7 +53,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Filter bar (visual only — server component) */}
+      {/* Filter bar (visual only - server component) */}
       <div className="sticky top-16 z-30 bg-[#09090b]/95 backdrop-blur-xl border-b border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex gap-2 overflow-x-auto no-scrollbar">
           {allCategories.map((cat) => (
@@ -83,7 +83,7 @@ export default function BlogPage() {
         {/* All stories grid */}
         <div>
           <p className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-5">
-            All Stories — {stories.length} published
+            All Stories - {stories.length} published
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {stories.slice(1).map((story) => (
