@@ -8,8 +8,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/blog", label: "Stories" },
   { href: "/podcast", label: "Voices" },
-  { href: "/#impact", label: "Impact" },
-  { href: "/#about", label: "About" },
 ]
 
 export default function Header() {
@@ -63,7 +61,7 @@ export default function Header() {
         {/* CTA + Hamburger */}
         <div className="flex items-center gap-3">
           <Link
-            href="/#share"
+            href="/submit-story"
             className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-400 text-[#09090b] text-sm font-semibold hover:bg-cyan-300 transition-colors"
           >
             Share Your Story
@@ -116,7 +114,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="/#share"
+            href="/submit-story"
             className="mt-2 px-3 py-2.5 rounded-lg bg-cyan-400 text-[#09090b] text-sm font-semibold text-center"
           >
             Share Your Story

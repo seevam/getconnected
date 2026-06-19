@@ -1,9 +1,10 @@
 import Link from "next/link"
 import {
   BookOpen, Headphones, Users2, Globe,
-  Mic2, Camera, ArrowRight,
+  Mic2, Camera, ArrowRight, User,
 } from "lucide-react"
 import StoryCard from "@/components/StoryCard"
+import NewsletterForm from "@/components/NewsletterForm"
 import { stories } from "@/data/stories"
 
 const stats = [
@@ -141,6 +142,63 @@ export default function HomePage() {
                 <div className="text-xs text-zinc-500 mt-0.5">{s.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About the Founder */}
+      <section id="about" className="bg-zinc-900/50 border-y border-zinc-800 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Photo */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-zinc-800 border border-zinc-700 overflow-hidden flex items-center justify-center">
+                {/* Placeholder — replace <img> with actual photo once provided */}
+                <div className="flex flex-col items-center gap-3 text-zinc-600">
+                  <User size={48} strokeWidth={1} />
+                  <span className="text-xs font-medium">Photo coming soon</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bio */}
+            <div>
+              <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-3">
+                About the Founder
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">
+                Ari Rachmat
+              </h2>
+              {/* Bio placeholder - Ari will provide 100-150 word bio */}
+              <div className="space-y-4 text-zinc-400 leading-relaxed">
+                <p>
+                  [Ari&apos;s bio will appear here — approximately 100-150 words describing
+                  background, motivation for starting ConnectED, and the mission to
+                  amplify stories from underrepresented communities across Indonesia
+                  and beyond.]
+                </p>
+                <p>
+                  ConnectED was founded in Jakarta in 2025 with a simple belief:
+                  every community deserves to have its stories heard. Through
+                  authentic storytelling, we bridge divides and inspire the change
+                  we want to see.
+                </p>
+              </div>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/submit-story"
+                  className="px-5 py-2.5 rounded-xl bg-cyan-400 text-[#09090b] text-sm font-semibold hover:bg-cyan-300 transition-colors text-center"
+                >
+                  Share Your Story
+                </Link>
+                <Link
+                  href="/podcast"
+                  className="px-5 py-2.5 rounded-xl border border-zinc-700 text-zinc-300 text-sm font-semibold hover:bg-zinc-800 transition-colors text-center"
+                >
+                  Listen to Voices
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -304,18 +362,39 @@ export default function HomePage() {
             power to connect, inspire, and create positive change.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-6 py-3 rounded-xl bg-cyan-400 text-[#09090b] font-semibold hover:bg-cyan-300 transition-colors text-sm">
+            <Link
+              href="/submit-story"
+              className="px-6 py-3 rounded-xl bg-cyan-400 text-[#09090b] font-semibold hover:bg-cyan-300 transition-colors text-sm text-center"
+            >
               Share Your Story
-            </button>
-            <button className="px-6 py-3 rounded-xl border border-zinc-700 text-zinc-300 font-semibold hover:bg-zinc-800 transition-colors text-sm">
+            </Link>
+            <Link
+              href="#newsletter"
+              className="px-6 py-3 rounded-xl border border-zinc-700 text-zinc-300 font-semibold hover:bg-zinc-800 transition-colors text-sm text-center"
+            >
               Join Our Community
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* Newsletter */}
+      <section id="newsletter" className="max-w-3xl mx-auto px-4 sm:px-6 py-20 text-center">
+        <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-3">
+          Stay Connected
+        </p>
+        <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">
+          Get Stories in Your Inbox
+        </h2>
+        <p className="text-zinc-400 leading-relaxed mb-8 max-w-xl mx-auto">
+          Subscribe to receive new stories, podcast episodes, and community
+          updates from ConnectED — no spam, unsubscribe anytime.
+        </p>
+        <NewsletterForm />
+      </section>
+
       {/* Quote */}
-      <section id="about" className="max-w-3xl mx-auto px-4 sm:px-6 py-20 text-center">
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-20 text-center">
         <p className="text-2xl sm:text-3xl font-light text-zinc-300 leading-relaxed italic mb-4">
           &ldquo;Human connection is the heart of change.&rdquo;
         </p>

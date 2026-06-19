@@ -2,13 +2,13 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import {
   Mic2, Headphones, Mail, Star, Clock,
-  Music2, Radio, PlayCircle, Tag, Users,
+  Music2, Radio, PlayCircle, Tag, Play,
 } from "lucide-react"
-import { Play } from "lucide-react"
 import { Icon } from "@/components/Icon"
 import type { IconName } from "@/components/Icon"
 import EpisodeCard from "@/components/EpisodeCard"
 import { episodes } from "@/data/episodes"
+import { spotifyEpisodes } from "@/data/spotify-links"
 
 export const metadata: Metadata = {
   title: "Voices Podcast",
@@ -286,6 +286,29 @@ export default function PodcastPage() {
         </div>
       </div>
 
+      {/* Spotify Episodes */}
+      {spotifyEpisodes.length > 0 && (
+        <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-12">
+          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-widest mb-5 flex items-center gap-2">
+            <Mic2 size={13} strokeWidth={2} />
+            Listen on Spotify
+          </h2>
+          <div className="space-y-4">
+            {spotifyEpisodes.map((ep) => (
+              <iframe
+                key={ep.id}
+                src={`https://open.spotify.com/embed/episode/${ep.id}?utm_source=generator`}
+                width="100%"
+                height="152"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                style={{ borderRadius: "12px", border: "none" }}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Guest CTA */}
       <section className="bg-zinc-900 border-y border-zinc-800 py-20">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
@@ -299,7 +322,7 @@ export default function PodcastPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/#share"
+              href="/submit-story"
               className="px-6 py-3 rounded-xl bg-violet-400 text-[#09090b] font-semibold hover:bg-violet-300 transition-colors text-sm"
             >
               Apply to be a Guest

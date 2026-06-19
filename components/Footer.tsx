@@ -43,7 +43,7 @@ const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "#",
+    href: "https://instagram.com/getconnected.id",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
         <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
