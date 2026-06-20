@@ -1,4 +1,7 @@
 import Link from "next/link"
+import { MapPin, Clock } from "lucide-react"
+import { Icon } from "@/components/Icon"
+import type { IconName } from "@/components/Icon"
 import type { Story } from "@/data/stories"
 
 const categoryColors: Record<string, string> = {
@@ -23,14 +26,26 @@ const heroBgs: Record<string, string> = {
   teal:    "from-teal-900/60 to-teal-950",
 }
 
+const heroIconColors: Record<string, string> = {
+  cyan:    "text-cyan-400/70",
+  emerald: "text-emerald-400/70",
+  sky:     "text-sky-400/70",
+  orange:  "text-orange-400/70",
+  violet:  "text-violet-400/70",
+  amber:   "text-amber-400/70",
+  rose:    "text-rose-400/70",
+  teal:    "text-teal-400/70",
+}
+
 interface Props {
   story: Story
   featured?: boolean
 }
 
 export default function StoryCard({ story, featured = false }: Props) {
-  const badgeClass = categoryColors[story.categoryColor] ?? categoryColors.cyan
-  const bgClass = heroBgs[story.categoryColor] ?? heroBgs.cyan
+  const badgeClass  = categoryColors[story.categoryColor] ?? categoryColors.cyan
+  const bgClass     = heroBgs[story.categoryColor] ?? heroBgs.cyan
+  const iconColor   = heroIconColors[story.categoryColor] ?? heroIconColors.cyan
 
   return (
     <Link
@@ -45,9 +60,12 @@ export default function StoryCard({ story, featured = false }: Props) {
           featured ? "md:w-64 h-48 md:h-auto" : "h-44"
         }`}
       >
-        <span className="text-5xl drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
-          {story.heroEmoji}
-        </span>
+        <Icon
+          name={story.heroIcon as IconName}
+          size={featured ? 64 : 52}
+          className={`${iconColor} group-hover:scale-110 transition-transform duration-300`}
+          strokeWidth={1.25}
+        />
       </div>
 
       {/* Content */}
@@ -56,7 +74,10 @@ export default function StoryCard({ story, featured = false }: Props) {
           <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${badgeClass}`}>
             {story.category}
           </span>
-          <span className="text-xs text-zinc-500">📍 {story.location}</span>
+          <span className="text-xs text-zinc-500 flex items-center gap-1">
+            <MapPin size={10} strokeWidth={1.75} />
+            {story.location}
+          </span>
         </div>
 
         <h3
@@ -73,7 +94,10 @@ export default function StoryCard({ story, featured = false }: Props) {
 
         <div className="mt-4 flex items-center justify-between">
           <div className="flex items-center gap-3 text-xs text-zinc-600">
-            <span>🕒 {story.readTime}</span>
+            <span className="flex items-center gap-1">
+              <Clock size={10} strokeWidth={1.75} />
+              {story.readTime}
+            </span>
             <span>{story.date}</span>
           </div>
           <span className="text-xs text-cyan-400 font-medium flex items-center gap-1 group-hover:gap-2 transition-all">

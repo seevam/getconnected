@@ -19,7 +19,7 @@ export interface Story {
   date: string
   readTime: string
   excerpt: string
-  heroEmoji: string
+  heroIcon: string
   highlights: { value: string; label: string }[]
   body: ContentBlock[]
   relatedSlugs: string[]
@@ -36,7 +36,7 @@ export const stories: Story[] = [
     readTime: '6 min read',
     excerpt:
       'Indonesian high school students discovered the critical link between sanitation and stunting, then raised IDR 30 million to build toilets on a remote island - proving that simple solutions can transform communities.',
-    heroEmoji: '🏝️',
+    heroIcon: 'Waves',
     highlights: [
       { value: 'IDR 30M', label: 'Funds Raised' },
       { value: '6+', label: 'Toilets Built' },
@@ -126,7 +126,7 @@ export const stories: Story[] = [
     readTime: '6 min read',
     excerpt:
       'What began as a Grade 10 TED Talk-style school presentation became a 7-year operation redistributing 126,000+ pieces of bread and 600 kg of fruit to 46 orphanages across Jakarta - proving that student innovation can outlast any classroom.',
-    heroEmoji: '🌿',
+    heroIcon: 'Leaf',
     highlights: [
       { value: '126,000+', label: 'Pieces of Bread Redistributed' },
       { value: '600+ kg', label: 'Fruit Distributed' },
@@ -210,7 +210,7 @@ export const stories: Story[] = [
     readTime: '5 min read',
     excerpt:
       'High school students invented an air bubble net system that collects 90 kg of river trash per week without harming marine life - a breakthrough that traditional rope nets could never achieve.',
-    heroEmoji: '💧',
+    heroIcon: 'Droplets',
     highlights: [
       { value: '90 kg', label: 'Trash Collected in One Week' },
       { value: '0', label: 'Marine Life Casualties' },
@@ -300,7 +300,7 @@ export const stories: Story[] = [
     readTime: '7 min read',
     excerpt:
       'Mahesh Khilnani created a matched giving model where London restaurants collect £1 donations from diners - and the Chanrai family doubles every pound - channeling the hospitality industry\'s reach into a sustainable funding stream for homelessness charities.',
-    heroEmoji: '🍽️',
+    heroIcon: 'UtensilsCrossed',
     highlights: [
       { value: '2×', label: 'Every Donation Matched' },
       { value: '£0', label: 'Admin Costs to Charities' },
@@ -369,7 +369,7 @@ export const stories: Story[] = [
       {
         type: 'callout',
         text: 'Working towards ending homelessness in the UK - one restaurant meal, one matched donation, one changed life at a time.',
-        icon: '🌍',
+        icon: 'Globe',
       },
     ],
     relatedSlugs: ['foodflip', 'charityconnect', 'opendoor'],
@@ -387,7 +387,7 @@ export const stories: Story[] = [
     readTime: '6 min read',
     excerpt:
       'Charity Connect BH solves the paradox of modern charity in Bahrain: countless people want to give, and countless causes need support, yet the two sides struggle to find each other. The platform\'s tagline says it all - "Charity made simple!"',
-    heroEmoji: '❤️',
+    heroIcon: 'Heart',
     highlights: [
       { value: '7', label: 'Cause Areas Covered' },
       { value: '2024', label: 'Year Founded' },
@@ -478,7 +478,7 @@ export const stories: Story[] = [
     readTime: '6 min read',
     excerpt:
       'Saanvi Kedia, a Singapore student navigating her own college applications, couldn\'t ignore that refugee students in Malaysia\'s Johor faced the same process without counselors, alumni networks, or information. So she built EmpowerED to change that.',
-    heroEmoji: '📚',
+    heroIcon: 'GraduationCap',
     highlights: [
       { value: '2025', label: 'Year Founded' },
       { value: 'Johor, MY', label: 'Primary Community Served' },
@@ -561,7 +561,7 @@ export const stories: Story[] = [
     readTime: '6 min read',
     excerpt:
       'High school students teaching other youth to pass Indonesia\'s national equivalency exams (PKBM Paket A, B, and C) - because Belajar Bersama believes education isn\'t just about knowledge, it\'s about opening economic opportunity and breaking cycles of poverty.',
-    heroEmoji: '🎓',
+    heroIcon: 'BookOpen',
     highlights: [
       { value: '60+', label: 'Students Helped to Pass Exams' },
       { value: '2021', label: 'Year Founded' },
@@ -588,7 +588,7 @@ export const stories: Story[] = [
       {
         type: 'callout',
         text: 'Belajar Bersama partnered strategically with Nara Kreatif, an organization dedicated to non-formal education. Nara Kreatif provides curriculum framework and exam registration; Belajar Bersama provides weekly tutoring, mock exams, emotional support, and peer mentorship - together creating a comprehensive support system.',
-        icon: '🤝',
+        icon: 'Users',
       },
       {
         type: 'h2',
@@ -647,7 +647,7 @@ export const stories: Story[] = [
     readTime: '6 min read',
     excerpt:
       'Tvisha Jhamb built an AI-powered chatbot so that migrant workers in Singapore - who know their neighborhood far less than the people who built it - can instantly find affordable groceries, healthcare, and remittance services nearby.',
-    heroEmoji: '🤖',
+    heroIcon: 'Bot',
     highlights: [
       { value: '2025', label: 'Year Launched' },
       { value: 'AI', label: 'Powered Assistance' },
@@ -687,7 +687,7 @@ export const stories: Story[] = [
       {
         type: 'callout',
         text: 'A worker can simply ask "Where can I find cheap groceries near Jurong?" and receive immediate, relevant recommendations. The AI understands context, remembers conversations, and provides increasingly relevant suggestions - available 24/7 in multiple languages.',
-        icon: '🤖',
+        icon: 'Bot',
       },
       {
         type: 'h2',

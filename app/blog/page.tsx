@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { BookOpen, Star } from "lucide-react"
 import StoryCard from "@/components/StoryCard"
 import { stories } from "@/data/stories"
 import type { CategoryColor } from "@/data/stories"
@@ -39,8 +40,9 @@ export default function BlogPage() {
         className={`pt-28 pb-16 bg-gradient-to-b ${colorMap[featured.categoryColor]} relative overflow-hidden`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-3">
-            📖 ConnectED Stories
+          <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-3 flex items-center justify-center gap-1.5">
+            <BookOpen size={12} strokeWidth={2} />
+            ConnectED Stories
           </p>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
             Stories, Insights &amp; Community Updates
@@ -74,8 +76,9 @@ export default function BlogPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         {/* Featured story */}
         <div className="mb-10">
-          <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-4">
-            ⭐ Featured Story
+          <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-4 flex items-center gap-1.5">
+            <Star size={12} strokeWidth={2} />
+            Featured Story
           </p>
           <StoryCard story={featured} featured />
         </div>

@@ -1,31 +1,36 @@
 import Link from "next/link"
+import {
+  BookOpen, Headphones, Users2, Globe,
+  Mic2, Camera, ArrowRight, User,
+} from "lucide-react"
 import StoryCard from "@/components/StoryCard"
+import NewsletterForm from "@/components/NewsletterForm"
 import { stories } from "@/data/stories"
 
 const stats = [
-  { icon: "📚", value: "24", label: "Stories Published" },
-  { icon: "🎧", value: "18", label: "Podcast Episodes" },
-  { icon: "🤝", value: "12", label: "Community Partners" },
-  { icon: "🌍", value: "6", label: "Countries" },
+  { icon: <BookOpen size={20} strokeWidth={1.5} />, value: "24", label: "Stories Published" },
+  { icon: <Headphones size={20} strokeWidth={1.5} />, value: "18", label: "Podcast Episodes" },
+  { icon: <Users2 size={20} strokeWidth={1.5} />, value: "12", label: "Community Partners" },
+  { icon: <Globe size={20} strokeWidth={1.5} />, value: "6", label: "Countries" },
 ]
 
 const platforms = [
   {
-    icon: "📖",
+    icon: <BookOpen size={36} strokeWidth={1.25} />,
     name: "Stories",
     description:
       "Quick-read narratives (5 minutes max) - your daily dose of inspiration. Real stories from real people making real change.",
     stats: [
       { v: "24", l: "Published" },
       { v: "5 min", l: "Avg Read" },
-      { v: "2×", l: "Weekly" },
+      { v: "2x", l: "Weekly" },
     ],
     href: "/blog",
     cta: "Explore Stories",
     color: "cyan",
   },
   {
-    icon: "🎙️",
+    icon: <Mic2 size={36} strokeWidth={1.25} />,
     name: "Voices",
     description:
       "Intimate 8-minute conversations with changemakers and community leaders sharing journeys and insights.",
@@ -39,7 +44,7 @@ const platforms = [
     color: "violet",
   },
   {
-    icon: "📸",
+    icon: <Camera size={36} strokeWidth={1.25} />,
     name: "Perspectives",
     description:
       "Photography collections capturing daily life, culture, and the extraordinary beauty found in ordinary moments.",
@@ -64,6 +69,11 @@ const platformGlow: Record<string, string> = {
   violet: "text-violet-400",
   amber:  "text-amber-400",
 }
+const platformIconColor: Record<string, string> = {
+  cyan:   "text-cyan-400/80",
+  violet: "text-violet-400/80",
+  amber:  "text-amber-400/80",
+}
 const platformBtn: Record<string, string> = {
   cyan:   "bg-cyan-400/10 text-cyan-400 hover:bg-cyan-400/20 border border-cyan-400/30",
   violet: "bg-violet-400/10 text-violet-400 hover:bg-violet-400/20 border border-violet-400/30",
@@ -71,15 +81,14 @@ const platformBtn: Record<string, string> = {
 }
 
 export default function HomePage() {
-  const featured = stories.slice(0, 1)[0]
+  const featured  = stories.slice(0, 1)[0]
   const secondary = stories.slice(1, 4)
-  const rest = stories.slice(4)
+  const rest      = stories.slice(4)
 
   return (
     <>
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-        {/* Background grid */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -88,7 +97,6 @@ export default function HomePage() {
             backgroundSize: "60px 60px",
           }}
         />
-        {/* Glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 text-center">
@@ -104,22 +112,24 @@ export default function HomePage() {
 
           <p className="max-w-2xl mx-auto text-lg text-zinc-400 leading-relaxed mb-10">
             We believe every voice matters. Every story has the power to bridge
-            divides, inspire change, and remind us of our shared humanity -
+            divides, inspire change, and remind us of our shared humanity
             across Indonesia&apos;s diverse communities and beyond.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
             <Link
               href="/blog"
-              className="px-6 py-3 rounded-xl bg-cyan-400 text-[#09090b] font-semibold hover:bg-cyan-300 transition-colors text-sm"
+              className="px-6 py-3 rounded-xl bg-cyan-400 text-[#09090b] font-semibold hover:bg-cyan-300 transition-colors text-sm inline-flex items-center justify-center gap-2"
             >
-              📖 Explore Stories
+              <BookOpen size={15} strokeWidth={2} />
+              Explore Stories
             </Link>
             <Link
               href="/podcast"
-              className="px-6 py-3 rounded-xl bg-zinc-800 border border-zinc-700 text-zinc-200 font-semibold hover:bg-zinc-700 hover:border-zinc-600 transition-colors text-sm"
+              className="px-6 py-3 rounded-xl bg-zinc-800 border border-zinc-700 text-zinc-200 font-semibold hover:bg-zinc-700 hover:border-zinc-600 transition-colors text-sm inline-flex items-center justify-center gap-2"
             >
-              🎙️ Listen to Voices
+              <Mic2 size={15} strokeWidth={2} />
+              Listen to Voices
             </Link>
           </div>
 
@@ -127,7 +137,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-zinc-800 rounded-2xl overflow-hidden border border-zinc-800">
             {stats.map((s) => (
               <div key={s.label} className="bg-[#09090b] py-6 px-4 text-center">
-                <div className="text-2xl mb-1">{s.icon}</div>
+                <div className="flex justify-center mb-2 text-zinc-500">{s.icon}</div>
                 <div className="text-2xl font-bold text-zinc-100 tabular-nums">{s.value}</div>
                 <div className="text-xs text-zinc-500 mt-0.5">{s.label}</div>
               </div>
@@ -136,7 +146,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Featured Stories ── */}
+      {/* About the Founder */}
+      <section id="about" className="bg-zinc-900/50 border-y border-zinc-800 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Photo */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-zinc-800 border border-zinc-700 overflow-hidden flex items-center justify-center">
+                {/* Placeholder — replace <img> with actual photo once provided */}
+                <div className="flex flex-col items-center gap-3 text-zinc-600">
+                  <User size={48} strokeWidth={1} />
+                  <span className="text-xs font-medium">Photo coming soon</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bio */}
+            <div>
+              <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-3">
+                About the Founder
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">
+                Ari Rachmat
+              </h2>
+              {/* Bio placeholder - Ari will provide 100-150 word bio */}
+              <div className="space-y-4 text-zinc-400 leading-relaxed">
+                <p>
+                  [Ari&apos;s bio will appear here — approximately 100-150 words describing
+                  background, motivation for starting ConnectED, and the mission to
+                  amplify stories from underrepresented communities across Indonesia
+                  and beyond.]
+                </p>
+                <p>
+                  ConnectED was founded in Jakarta in 2025 with a simple belief:
+                  every community deserves to have its stories heard. Through
+                  authentic storytelling, we bridge divides and inspire the change
+                  we want to see.
+                </p>
+              </div>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/submit-story"
+                  className="px-5 py-2.5 rounded-xl bg-cyan-400 text-[#09090b] text-sm font-semibold hover:bg-cyan-300 transition-colors text-center"
+                >
+                  Share Your Story
+                </Link>
+                <Link
+                  href="/podcast"
+                  className="px-5 py-2.5 rounded-xl border border-zinc-700 text-zinc-300 text-sm font-semibold hover:bg-zinc-800 transition-colors text-center"
+                >
+                  Listen to Voices
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Stories */}
       <section id="stories" className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
         <div className="flex items-end justify-between mb-10">
           <div>
@@ -151,11 +218,10 @@ export default function HomePage() {
             href="/blog"
             className="hidden sm:flex items-center gap-1.5 text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
           >
-            View all <span>→</span>
+            View all <ArrowRight size={14} />
           </Link>
         </div>
 
-        {/* Featured grid */}
         {featured && (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
             <div className="lg:col-span-2">
@@ -169,7 +235,6 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* Rest */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {rest.map((s) => (
             <StoryCard key={s.slug} story={s} />
@@ -177,16 +242,13 @@ export default function HomePage() {
         </div>
 
         <div className="mt-8 text-center sm:hidden">
-          <Link
-            href="/blog"
-            className="text-sm text-cyan-400 font-medium"
-          >
+          <Link href="/blog" className="text-sm text-cyan-400 font-medium">
             View all stories →
           </Link>
         </div>
       </section>
 
-      {/* ── Platform Overview ── */}
+      {/* Platform Overview */}
       <section id="voices" className="bg-zinc-900/50 border-y border-zinc-800 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
@@ -208,7 +270,7 @@ export default function HomePage() {
                 key={p.name}
                 className={`bg-zinc-900 border ${platformBorder[p.color]} rounded-2xl p-6 flex flex-col transition-all duration-300`}
               >
-                <div className="text-4xl mb-4">{p.icon}</div>
+                <div className={`mb-4 ${platformIconColor[p.color]}`}>{p.icon}</div>
                 <h3 className={`text-xl font-bold mb-2 ${platformGlow[p.color]}`}>{p.name}</h3>
                 <p className="text-sm text-zinc-400 leading-relaxed mb-5 flex-1">
                   {p.description}
@@ -235,7 +297,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Impact ── */}
+      {/* Impact */}
       <section id="impact" className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -260,7 +322,7 @@ export default function HomePage() {
                 "Inspiring action through powerful narratives",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-zinc-300">
-                  <span className="text-cyan-400 mt-0.5">✦</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 shrink-0" />
                   {item}
                 </li>
               ))}
@@ -279,7 +341,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* CTA */}
       <section
         id="share"
         className="bg-zinc-900 border-y border-zinc-800 py-24 relative overflow-hidden"
@@ -287,8 +349,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage:
-              "radial-gradient(ellipse at center, #22d3ee, transparent 70%)",
+            backgroundImage: "radial-gradient(ellipse at center, #22d3ee, transparent 70%)",
           }}
         />
         <div className="relative max-w-2xl mx-auto px-4 sm:px-6 text-center">
@@ -297,27 +358,48 @@ export default function HomePage() {
           </h2>
           <p className="text-zinc-400 leading-relaxed mb-8">
             Whether you&apos;re leading change in your community, overcoming
-            challenges, or simply living an inspiring life - your story has the
+            challenges, or simply living an inspiring life your story has the
             power to connect, inspire, and create positive change.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-6 py-3 rounded-xl bg-cyan-400 text-[#09090b] font-semibold hover:bg-cyan-300 transition-colors text-sm">
+            <Link
+              href="/submit-story"
+              className="px-6 py-3 rounded-xl bg-cyan-400 text-[#09090b] font-semibold hover:bg-cyan-300 transition-colors text-sm text-center"
+            >
               Share Your Story
-            </button>
-            <button className="px-6 py-3 rounded-xl border border-zinc-700 text-zinc-300 font-semibold hover:bg-zinc-800 transition-colors text-sm">
+            </Link>
+            <Link
+              href="#newsletter"
+              className="px-6 py-3 rounded-xl border border-zinc-700 text-zinc-300 font-semibold hover:bg-zinc-800 transition-colors text-sm text-center"
+            >
               Join Our Community
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── Quote ── */}
-      <section id="about" className="max-w-3xl mx-auto px-4 sm:px-6 py-20 text-center">
+      {/* Newsletter */}
+      <section id="newsletter" className="max-w-3xl mx-auto px-4 sm:px-6 py-20 text-center">
+        <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-3">
+          Stay Connected
+        </p>
+        <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">
+          Get Stories in Your Inbox
+        </h2>
+        <p className="text-zinc-400 leading-relaxed mb-8 max-w-xl mx-auto">
+          Subscribe to receive new stories, podcast episodes, and community
+          updates from ConnectED — no spam, unsubscribe anytime.
+        </p>
+        <NewsletterForm />
+      </section>
+
+      {/* Quote */}
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-20 text-center">
         <p className="text-2xl sm:text-3xl font-light text-zinc-300 leading-relaxed italic mb-4">
           &ldquo;Human connection is the heart of change.&rdquo;
         </p>
         <p className="text-sm text-cyan-400 font-semibold tracking-wide uppercase">
-          - ConnectED Foundation Principle
+          ConnectED Foundation Principle
         </p>
       </section>
     </>
