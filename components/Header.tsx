@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
+import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -60,6 +61,21 @@ export default function Header() {
 
         {/* CTA + Hamburger */}
         <div className="flex items-center gap-3">
+          <Show when="signed-out">
+            <SignInButton>
+              <button className="hidden md:inline-flex px-3 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors">
+                Sign In
+              </button>
+            </SignInButton>
+            <SignUpButton>
+              <button className="hidden md:inline-flex px-3 py-2 rounded-lg border border-zinc-700 text-sm font-medium text-zinc-100 hover:bg-zinc-800 transition-colors">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </Show>
+          <Show when="signed-in">
+            <UserButton />
+          </Show>
           <Link
             href="/submit-story"
             className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-400 text-[#09090b] text-sm font-semibold hover:bg-cyan-300 transition-colors"
@@ -96,7 +112,7 @@ export default function Header() {
       {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 bg-[#09090b]/98 backdrop-blur-xl border-b border-zinc-800 ${
-          mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-4 py-4 flex flex-col gap-1">
@@ -113,6 +129,20 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          <Show when="signed-out">
+            <div className="mt-2 flex gap-2">
+              <SignInButton>
+                <button className="flex-1 px-3 py-2.5 rounded-lg text-sm font-medium text-zinc-300 border border-zinc-800">
+                  Sign In
+                </button>
+              </SignInButton>
+              <SignUpButton>
+                <button className="flex-1 px-3 py-2.5 rounded-lg text-sm font-medium text-zinc-100 border border-zinc-700">
+                  Sign Up
+                </button>
+              </SignUpButton>
+            </div>
+          </Show>
           <Link
             href="/submit-story"
             className="mt-2 px-3 py-2.5 rounded-lg bg-cyan-400 text-[#09090b] text-sm font-semibold text-center"
